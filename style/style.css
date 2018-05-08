@@ -1,0 +1,17 @@
+/* pointer on hover over tri-column boxes */
+.pointer {cursor: pointer;}
+
+/* background on top panel */
+.ui.inverted.segment.colheading{
+    background: url(https://s3.amazonaws.com/johnrudell-port-dev/background.jpg) no-repeat center center scroll;
+    background-size: cover;
+}
+
+/* border around top menue bar */
+.ui.secondary.inverted.pointing.menu.colborder{
+    border-color: rgba(255, 255, 254, 0);
+}
+/* border around top menue bar once scrolling*/
+.ui.secondary.inverted.pointing.menu.colborder.colscrolling{
+    background-color: #ffffff;
+}
