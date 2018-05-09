@@ -1,26 +1,19 @@
 import React from 'react'
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
-import App from './app';
 import ColumnWithPopout from './column_with_popout';
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
-const ModalBasicExample = ({ values, heading, paragraph }) => {
-    console.log("in model Basic Example");
-    return (
-        <Modal trigger={<ColumnWithPopout heading={heading} paragraph={paragraph}></ColumnWithPopout>} basic size='small' closeIcon>
-            <Header icon='archive' content='Archive Old Messages' />
-            <Modal.Content>
-                <p>{values}</p>
-            </Modal.Content>
-            <Modal.Actions>
-                <Button basic color='red' inverted>
-                    <Icon name='remove' /> No
-             </Button>
-                <Button color='green' inverted>
-                    <Icon name='checkmark' /> Yes
-            </Button>
-            </Modal.Actions>
-        </Modal>
-    )
-}
+const ModalBasicExample = ({ values, heading, paragraph }) => (
+    <Modal size='large' trigger={<ColumnWithPopout heading={heading} paragraph={paragraph}></ColumnWithPopout>} >
+        <Modal.Header>Select a Photo</Modal.Header>
+        <Modal.Content image>
+            <Image wrapped fluid src='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
+            <Modal.Description>
+                <Header>Default Profile Image</Header>
+                <p>Here are the values that you input: {values}</p>
+                <p>Is it okay to use this photo?</p>
+            </Modal.Description>
+        </Modal.Content>
+    </Modal>
+)
 
 export default ModalBasicExample
