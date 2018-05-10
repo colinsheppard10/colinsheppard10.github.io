@@ -88,19 +88,19 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Link to="home" spy={true} smooth={true} duration={500}>
-                  <Menu.Item name='home' as='a' active={activeItem === 'home'} onClick={this.handleItemClick} >Home</Menu.Item>
+                  <Menu.Item className="coltext" name='home' as='a' active={activeItem === 'home'} onClick={this.handleItemClick} >Home</Menu.Item>
                 </Link>
 
                 <Link to="work" spy={true} smooth={true} duration={500}>
-                  <Menu.Item name='work' as='a' active={activeItem === 'work'} onClick={this.handleItemClick}>Work</Menu.Item>
+                  <Menu.Item className="coltext" className="coltext" name='work' as='a' active={activeItem === 'work'} onClick={this.handleItemClick}>Work</Menu.Item>
                 </Link>
 
                 <Link to="company" spy={true} smooth={true} duration={500}>
-                  <Menu.Item name='company' as='a' active={activeItem === 'company'} onClick={this.handleItemClick}>Company</Menu.Item>
+                  <Menu.Item className="coltext" className="coltext" name='company' as='a' active={activeItem === 'company'} onClick={this.handleItemClick}>Company</Menu.Item>
                 </Link>
 
                 <Link to="careers" spy={true} smooth={true} duration={500}>
-                  <Menu.Item name='careers' as='a' active={activeItem === 'careers'} onClick={this.handleItemClick}>Careers</Menu.Item>
+                  <Menu.Item className="coltext" name='careers' as='a' active={activeItem === 'careers'} onClick={this.handleItemClick}>Careers</Menu.Item>
                 </Link>
 
               </Container>

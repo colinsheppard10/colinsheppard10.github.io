@@ -11,6 +11,18 @@
 .ui.secondary.inverted.pointing.menu.colborder{
     border-color: rgba(255, 255, 254, 0);
 }
+
+/* text on top menue bar */
+.ui.secondary.inverted.menu a.item.coltext{
+    color: rgba(14, 18, 34, 1)!important;
+}
+
+/* text on top menue bar hover */
+.ui.secondary.inverted.menu a.item.coltext:hover{
+    font-weight: bold !important;
+    color: rgba(14, 18, 34, 1)!important;
+}
+
 /* border around top menue bar once scrolling*/
 .ui.secondary.inverted.pointing.menu.colborder.colscrolling{
     background-color: #ffffff;
