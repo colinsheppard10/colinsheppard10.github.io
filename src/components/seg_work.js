@@ -6,14 +6,14 @@ import { Element } from 'react-scroll';
 export default class WorkSeg extends Component {
     state = {
         calculations: {
-            onScreen: false,
+            passing: false,
         },
     }
 
     handleContextRef = contextRef => this.setState({ contextRef })
 
     handleUpdate = (e, { calculations }) => {
-        if (calculations.onScreen) {
+        if (calculations.passing) {
             this.props.callBack('work');
         }
         return this.setState({ calculations })

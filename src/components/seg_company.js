@@ -8,14 +8,14 @@ import { Element } from 'react-scroll';
 export default class CompanySeg extends Component {
     state = {
         calculations: {
-            onScreen: false,
+            passing: false,
         },
     }
 
     handleContextRef = contextRef => this.setState({ contextRef })
 
     handleUpdate = (e, { calculations }) => {
-        if (calculations.onScreen) {
+        if (calculations.passing) {
             this.props.callBack('company');
         }
         return this.setState({ calculations })

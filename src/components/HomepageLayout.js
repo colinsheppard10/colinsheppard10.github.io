@@ -23,12 +23,6 @@ import WorkSeg from './seg_work';
 import { connect } from 'react-redux';
 import { activeItemAction } from '../actions/index';
 
-
-
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
@@ -59,28 +53,25 @@ const HomepageHeading = ({ mobile }) => (
   </Container>
 )
 
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
-
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
-class DesktopContainer extends Component {
-  state = { activeItem: 'home' } // remove this and only have is as global activeItem
+class HomepageLayout extends Component {
+  // state = { activeItem: 'home' }
+  state = {}
 
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name }) // change this to call active item action
+  handleItemClick = (e, { name }) => {
+    return this.props.activeItemAction(name)
+  }
+  // handleItemClick = (e, { name }) => this.setState({ activeItem: name }) // change this to call active item action
+
 
   render() {
     const { children } = this.props
     const { fixed } = this.state
-    const { activeItem } = this.state // remove this
+    const { activeItem } = this.state
 
     return (
-      <Responsive {...Responsive.onlyComputer}>
+      <div>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
           <Segment className="colheading" inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
 
@@ -115,89 +106,10 @@ class DesktopContainer extends Component {
             <HomepageHeading />
           </Segment>
         </Visibility>
-        {children}
-      </Responsive>
-    )
-  }
-}
 
-DesktopContainer.propTypes = {
-  children: PropTypes.node,
-}
-
-class MobileContainer extends Component {
-  state = {}
-
-  handlePusherClick = () => {
-    const { sidebarOpened } = this.state
-
-    if (sidebarOpened) this.setState({ sidebarOpened: false })
-  }
-
-  handleToggle = () => this.setState({ sidebarOpened: !this.state.sidebarOpened })
-
-  render() {
-    const { children } = this.props
-    const { sidebarOpened } = this.state
-
-    return (
-      <Responsive {...Responsive.onlyMobile}>
-        <Sidebar.Pushable>
-          <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Menu.Item as='a' active>Home</Menu.Item>
-            <Menu.Item as='a'>Colin2 Work</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
-          </Sidebar>
-
-          <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>
-            <Segment inverted textAlign='center' style={{ minHeight: 350, padding: '1em 0em' }} vertical>
-              <Container>
-                <Menu inverted pointing secondary size='large'>
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name='sidebar' />
-                  </Menu.Item>
-                  <Menu.Item position='right'>
-                    <Button as='a' inverted>Log in</Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
-                  </Menu.Item>
-                </Menu>
-              </Container>
-              <HomepageHeading mobile />
-            </Segment>
-
-            {children}
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Responsive>
-    )
-  }
-}
-
-MobileContainer.propTypes = {
-  children: PropTypes.node,
-}
-
-const ResponsiveContainer = ({ children }) => (
-  <div>
-    <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
-  </div>
-)
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-}
-
-class HomepageLayout extends Component {
-  render() {
-    return (
-      <ResponsiveContainer>
-        <WorkSeg callBack={selectedItem => this.props.activeItemAction(selectedItem)} />
-        <CompanySeg callBack={selectedItem => this.props.activeItemAction(selectedItem)} />
-        <CareersSeg callBack={selectedItem => this.props.activeItemAction(selectedItem)} />
+        <WorkSeg callBack={selectedItem => this.setState({ activeItem: selectedItem })} />
+        <CompanySeg callBack={selectedItem => this.setState({ activeItem: selectedItem })} />
+        <CareersSeg callBack={selectedItem => this.setState({ activeItem: selectedItem })} />
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
           <Container>
             <Grid divided inverted stackable>
@@ -228,7 +140,8 @@ class HomepageLayout extends Component {
             </Grid>
           </Container>
         </Segment>
-      </ResponsiveContainer>
+      </div>
+
     )
   }
 }
