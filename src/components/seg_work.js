@@ -1,31 +1,15 @@
 import React, { Component } from 'react'
-import { Visibility, Segment, Grid, Header, Button, Image } from 'semantic-ui-react'
+import { Segment, Grid, Header, Button, Image } from 'semantic-ui-react'
 import { Element } from 'react-scroll';
 
 
 export default class WorkSeg extends Component {
-    state = {
-        calculations: {
-            onScreen: false,
-        },
-    }
-
-    handleContextRef = contextRef => this.setState({ contextRef })
-
-    handleUpdate = (e, { calculations }) => {
-        if (calculations.onScreen) {
-            this.props.callBack('work');
-        }
-        return this.setState({ calculations })
-    }
-
     render() {
-        const { calculations, contextRef } = this.state
         return (
-            <div ref={this.handleContextRef}>
-                <Visibility onUpdate={this.handleUpdate}>
-                    <Segment style={{ padding: '8em 0em' }} vertical>
-                        <Element name="work" />
+            <div>
+                <br />
+                <Element name="work">
+                    <Segment style={{ padding: '4em 0em' }} vertical>
                         <Grid container stackable verticalAlign='middle'>
                             <Grid.Row>
                                 <Grid.Column width={8}>
@@ -55,7 +39,7 @@ export default class WorkSeg extends Component {
                             </Grid.Row>
                         </Grid>
                     </Segment>
-                </Visibility>
+                </Element>
             </div>
         )
     }

@@ -195,9 +195,11 @@ class HomepageLayout extends Component {
   render() {
     return (
       <ResponsiveContainer>
-        <WorkSeg callBack={selectedItem => this.props.activeItemAction(selectedItem)} />
-        <CompanySeg callBack={selectedItem => this.props.activeItemAction(selectedItem)} />
-        <CareersSeg callBack={selectedItem => this.props.activeItemAction(selectedItem)} />
+        <WorkSeg />
+        <Segment>
+          <CompanySeg />
+        </Segment>
+        <CareersSeg />
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
           <Container>
             <Grid divided inverted stackable>
