@@ -1,4 +1,4 @@
-import ScreenCoverModel from './modelBasicExample';
+import ModelBasicExample from './modelBasicExample';
 
 import React, { Component } from 'react'
 import { Segment, Grid, Header, Image } from 'semantic-ui-react'
@@ -13,14 +13,12 @@ export default class CompanySeg extends Component {
                 <Segment style={{ padding: '0em' }} vertical>
                     <Grid celled='internally' columns='equal' stackable>
                         <Grid.Row textAlign='center'>
-                            <ScreenCoverModel values="one" heading="one" paragraph="one paragraph" />
-                            <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                                <Header as='h3' style={{ fontSize: '2em' }}>"I shouldn't have gone with their competitor."</Header>
-                                <p style={{ fontSize: '1.33em' }}>
-                                    <Image avatar src='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
-                                    <b>Nan</b> Chief Fun Officer Acme Toys
-                                    </p>
-                            </Grid.Column>
+                            <ModelBasicExample values="one value" heading="one heading" paragraph="one paragraph" image='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
+                            <ModelBasicExample values="two value" heading="two heading" paragraph="two paragraph" image='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
+                        </Grid.Row>
+                        <Grid.Row textAlign='center'>
+                            <ModelBasicExample values="three value" heading="three heading" paragraph="three paragraph" image='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
+                            <ModelBasicExample values="four value" heading="four heading" paragraph="four paragraph" image='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
                         </Grid.Row>
                     </Grid>
                 </Segment>

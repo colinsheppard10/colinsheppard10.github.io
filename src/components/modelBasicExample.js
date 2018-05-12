@@ -2,15 +2,14 @@ import React from 'react'
 import ColumnWithPopout from './column_with_popout';
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
-const ModalBasicExample = ({ values, heading, paragraph }) => (
+const ModalBasicExample = ({ values, heading, paragraph, image }) => (
     <Modal size='large' trigger={<ColumnWithPopout heading={heading} paragraph={paragraph}></ColumnWithPopout>} >
-        <Modal.Header>Select a Photo</Modal.Header>
+        <Modal.Header>{heading}</Modal.Header>
         <Modal.Content image>
-            <Image wrapped fluid src='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg' />
+            <Image wrapped fluid src={image} />
             <Modal.Description>
-                <Header>Default Profile Image</Header>
-                <p>Here are the values that you input: {values}</p>
-                <p>Is it okay to use this photo?</p>
+                <Header>{values}</Header>
+                <p>{paragraph}</p>
             </Modal.Description>
         </Modal.Content>
     </Modal>
