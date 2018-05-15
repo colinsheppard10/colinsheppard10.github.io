@@ -33,7 +33,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Imagine-a-Company'
+      content='Colin Sheppard'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -44,7 +44,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Software Engineer'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -52,10 +52,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
-      Get Started
-      <Icon name='right arrow' />
-    </Button>
+
   </Container>
 )
 
@@ -205,26 +202,16 @@ class HomepageLayout extends Component {
             <Grid divided inverted stackable>
               <Grid.Row>
                 <Grid.Column width={3}>
-                  <Header inverted as='h4' content='About' />
+                  <Header inverted as='h4' content='Contact' />
                   <List link inverted>
-                    <List.Item as='a'>Sitemap</List.Item>
-                    <List.Item as='a'>Contact Us</List.Item>
-                    <List.Item as='a'>Religious Ceremonies</List.Item>
-                    <List.Item as='a'>Gazebo Plans</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='Services' />
-                  <List link inverted>
-                    <List.Item as='a'>Banana Pre-Order</List.Item>
-                    <List.Item as='a'>DNA FAQ</List.Item>
-                    <List.Item as='a'>How To Access</List.Item>
-                    <List.Item as='a'>Favorite X-Men</List.Item>
+                    <List.Item as='a'>colinsheppard10@gmail.com</List.Item>
+                    <List.Item as='a'>LinkedIn</List.Item>
+                    <List.Item as='a'>GitHub</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
-                  <Header as='h4' inverted>Footer Header</Header>
-                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                  <Header as='h4' inverted>I can make you a site like this</Header>
+                  <p> -If you're working on something cool I'll probably do it for free.</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

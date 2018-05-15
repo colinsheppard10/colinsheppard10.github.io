@@ -7,14 +7,20 @@ export default class CareersSeg extends Component {
     render() {
         return (
             <Element name="careers" >
-                <Segment style={{ padding: '8em 0em' }} vertical>
+                <Segment style={{ padding: '2em 0em' }} vertical>
                     <Container text>
-                        <Header as='h3' style={{ fontSize: '2em' }}>Breaking The Grid, Grabs Your Attention</Header>
-                        <p style={{ fontSize: '1.33em' }}>
-                            Instead of focusing on content creation and hard work, we have learned how to master the art of doing
-                            nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic
-                            and worth your attention.
-                            </p>
+                        <Divider
+                            as='h4'
+                            className='header'
+                            horizontal
+                            style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+                        >
+                            <a>Skills</a>
+                        </Divider>
+                        <p className="colcolor" style={{ fontSize: '1.33em' }}>
+                            In my time at Aeris, I worked with Kafka, Rabbit MQ, and java RESTful web services for passing messages between services. I also gained experience using Cassandra, Redis, and SQL databases. These services were primarily written in Java and JavaScript, so I have experience in surrounding technologies like: Node JS, Maven, and the Spring framework. <br />My front end skills are primarily  in React/Redux along with some limited experience in AngularJS.
+                            <br />For BlockChain development, I used Truffle to deploy contracts and web3 for front end integration. I made use of OpenZepplin’s open source library allowing my crowdsale to minting ERC20 tokens.
+                        </p>
                         <Button as='a' size='large'>Read More</Button>
 
                         <Divider
@@ -23,14 +29,12 @@ export default class CareersSeg extends Component {
                             horizontal
                             style={{ margin: '3em 0em', textTransform: 'uppercase' }}
                         >
-                            <a href='#'>Case Studies</a>
+                            <a>Personal</a>
                         </Divider>
 
-                        <Header as='h3' style={{ fontSize: '2em' }}>Did We Tell You About Our Bananas?</Header>
-                        <p style={{ fontSize: '1.33em' }}>
-                            Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but it's really
-                            true.
-                            It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
+                        <Header className="colcolor" as='h3' style={{ fontSize: '1.33em' }}>Born and raised in Beverly on the south side of Chicago</Header>
+                        <p className="colcolor" style={{ fontSize: '1.33em' }}>
+                            I might spend time in other places, but Chicago is my home. Here's my <a href='https://www.facebook.com/colin.sheppard.75'>facebook</a> and the <a href='https://open.spotify.com/user/sheppar8'>music</a> I like - playlists prepended w/ "COL" are the good ones (sorry Maddie).
                             </p>
                         <Button as='a' size='large'>I'm Still Quite Interested</Button>
                     </Container>
@@ -39,10 +43,5 @@ export default class CareersSeg extends Component {
         )
     }
 }
-
-
-
-
-
 
 

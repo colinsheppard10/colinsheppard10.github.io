@@ -13,15 +13,13 @@ export default class WorkSeg extends Component {
                         <Grid container stackable verticalAlign='middle'>
                             <Grid.Row>
                                 <Grid.Column width={8}>
-                                    <Header as='h3' style={{ fontSize: '2em' }}>We Help Companies and Companions</Header>
-                                    <p style={{ fontSize: '1.33em' }}>
-                                        We can give your company superpowers to do things that they never thought possible. Let us delight
-                                        your customers and empower your needs... through pure data analytics.
+                                    <Header className="colcolor" as='h3' style={{ fontSize: '2em' }}>The past few years...</Header>
+                                    <p className="colcolor" style={{ fontSize: '1.33em' }}>
+                                        I've worked on Java and JavaScript microServices for Aeris Communications, an IOT company.
                                     </p>
-                                    <Header as='h3' style={{ fontSize: '2em' }}>We Make Bananas That Can Dance</Header>
-                                    <p style={{ fontSize: '1.33em' }}>
-                                        Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
-                                    </p>
+                                    <Header className="colcolor" as='h3' style={{ fontSize: '2em' }}>Currently...</Header>
+                                    <p className="colcolor" style={{ fontSize: '1.33em' }}>
+                                        I live in a tech incubator in NYC where I am working on an Ethereum BlockChain project.                                  </p>
                                 </Grid.Column>
                                 <Grid.Column floated='right' width={6}>
                                     <Image
@@ -34,7 +32,7 @@ export default class WorkSeg extends Component {
                             </Grid.Row>
                             <Grid.Row>
                                 <Grid.Column textAlign='center'>
-                                    <Button size='huge'>Check Them Out</Button>
+                                    <Button size='huge'>GitHub</Button>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>

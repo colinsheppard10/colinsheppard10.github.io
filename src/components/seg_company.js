@@ -1,12 +1,11 @@
 import ModelBasicExample from './modelBasicExample';
 
 import React, { Component } from 'react'
-import { Segment, Grid, Header, Image } from 'semantic-ui-react'
+import { Segment, Grid, Header, Image, Reveal } from 'semantic-ui-react'
 import { Element } from 'react-scroll';
 
 
 export default class CompanySeg extends Component {
-
     render() {
         return (
             <Element name="company">
@@ -26,6 +25,10 @@ export default class CompanySeg extends Component {
         )
     }
 }
+
+
+
+
 
 
 
