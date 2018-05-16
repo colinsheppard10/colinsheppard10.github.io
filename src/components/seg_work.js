@@ -19,7 +19,7 @@ export default class WorkSeg extends Component {
                                     </p>
                                     <Header className="colcolor" as='h3' style={{ fontSize: '2em' }}>Currently...</Header>
                                     <p className="colcolor" style={{ fontSize: '1.33em' }}>
-                                        I live in a tech incubator in NYC where I am working on an Ethereum BlockChain project.                                  </p>
+                                        I live in a tech incubator in NYC where I am working on an Ethereum BlockChain project in the real estate space.                                  </p>
                                 </Grid.Column>
                                 <Grid.Column floated='right' width={6}>
                                     <Image

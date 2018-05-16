@@ -18,8 +18,8 @@ export default class CareersSeg extends Component {
                             <a>Skills</a>
                         </Divider>
                         <p className="colcolor" style={{ fontSize: '1.33em' }}>
-                            In my time at Aeris, I worked with Kafka, Rabbit MQ, and java RESTful web services for passing messages between services. I also gained experience using Cassandra, Redis, and SQL databases. These services were primarily written in Java and JavaScript, so I have experience in surrounding technologies like: Node JS, Maven, and the Spring framework. <br />My front end skills are primarily  in React/Redux along with some limited experience in AngularJS.
-                            <br />For BlockChain development, I used Truffle to deploy contracts and web3 for front end integration. I made use of OpenZepplin’s open source library allowing my crowdsale to minting ERC20 tokens.
+                            In my time at Aeris, I worked with Kafka, Rabbit MQ, and Java RESTful web services for passing messages between services. I also gained experience using Cassandra, Redis, and SQL databases. These services were primarily written in Java and JavaScript, so I have experience in surrounding technologies like: Node JS, Maven, and the Spring framework. <br />My front-end skills are primarily  in React/Redux along with some limited experience in AngularJS.
+                            <br />For BlockChain development, I use Truffle to deploy contracts and web3 for front-end integration. I made use of OpenZepplin’s open source library allowing my crowdsale to mint ERC20 tokens.
                         </p>
                         <Button as='a' size='large'>Read More</Button>
 
