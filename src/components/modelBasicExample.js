@@ -13,7 +13,7 @@ const ModalBasicExample = ({ values, heading, paragraph, image }) => (
             <Image wrapped fluid src={image} />
             <Modal.Description>
                 <Header>{values}</Header>
-                <p>{paragraph}</p>
+                <p className='colparagraph'>{paragraph}</p>
             </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
