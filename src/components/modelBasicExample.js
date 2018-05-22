@@ -1,11 +1,9 @@
 import React from 'react'
 import ColumnWithPopout from './column_with_popout';
 import { Button, Header, Image, Modal, Grid, Container, Icon } from 'semantic-ui-react'
-import Slider from "react-slick";
 
-
-const ModalBasicExample = ({ values, heading, paragraph, image }) => (
-    <Modal size='large scrolling' trigger={<ColumnWithPopout heading={heading} paragraph={paragraph}></ColumnWithPopout>} closeIcon>
+const ModalBasicExample = ({ values, heading, paragraph, image, firstImage, firstDescription, gitHubLink }) => (
+    <Modal size='large scrolling' trigger={<ColumnWithPopout heading={heading} firstImage={firstImage} firstDescription={firstDescription}></ColumnWithPopout>} closeIcon>
         <Modal.Header>
             {heading}
         </Modal.Header>
@@ -17,7 +15,7 @@ const ModalBasicExample = ({ values, heading, paragraph, image }) => (
             </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-            <Button primary>
+            <Button a href={gitHubLink} target="_blank" primary>
                 <Icon size='large' name='github' /> GitHub
             </Button>
         </Modal.Actions>

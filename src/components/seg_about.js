@@ -3,12 +3,12 @@ import { Segment, Grid, Header, Button, Image } from 'semantic-ui-react'
 import { Element } from 'react-scroll';
 
 
-export default class WorkSeg extends Component {
+export default class AboutSeg extends Component {
     render() {
         return (
             <div>
                 <br />
-                <Element name="work">
+                <Element name="about">
                     <Segment style={{ padding: '4em 0em' }} vertical>
                         <Grid container stackable verticalAlign='middle'>
                             <Grid.Row>

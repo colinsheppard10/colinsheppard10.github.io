@@ -17,9 +17,9 @@ import {
 } from 'semantic-ui-react'
 import ScreenCoverModel from './modelBasicExample';
 import { Link, Element } from 'react-scroll';
-import CareersSeg from './seg_careers';
-import CompanySeg from './seg_company';
-import WorkSeg from './seg_work';
+import SkillsSeg from './seg_skills';
+import ProjectsSeg from './seg_projects';
+import AboutSeg from './seg_about';
 import { connect } from 'react-redux';
 import { activeItemAction } from '../actions/index';
 
@@ -81,7 +81,7 @@ class DesktopContainer extends Component {
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
           <Segment className="colheading" inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
 
-            <Element name="home" />
+            <Element name="about" />
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -91,20 +91,20 @@ class DesktopContainer extends Component {
               className="colborder"
             >
               <Container>
-                <Link to="home" spy={true} smooth={true} duration={500}>
-                  <Menu.Item className="coltext" name='home' as='a' active={activeItem === 'home'} onClick={this.handleItemClick} >Home</Menu.Item>
+                <Link to="about" spy={true} smooth={true} duration={500}>
+                  <Menu.Item className="coltext" name='about' as='a' active={activeItem === 'about'} onClick={this.handleItemClick} >About</Menu.Item>
                 </Link>
 
-                <Link to="work" spy={true} smooth={true} duration={500}>
-                  <Menu.Item className="coltext" className="coltext" name='work' as='a' active={activeItem === 'work'} onClick={this.handleItemClick}>Work</Menu.Item>
+                <Link to="projects" spy={true} smooth={true} duration={500}>
+                  <Menu.Item className="coltext" className="coltext" name='projects' as='a' active={activeItem === 'projects'} onClick={this.handleItemClick}>Projects</Menu.Item>
                 </Link>
 
-                <Link to="company" spy={true} smooth={true} duration={500}>
-                  <Menu.Item className="coltext" className="coltext" name='company' as='a' active={activeItem === 'company'} onClick={this.handleItemClick}>Company</Menu.Item>
+                <Link to="skills" spy={true} smooth={true} duration={500}>
+                  <Menu.Item className="coltext" className="coltext" name='skills' as='a' active={activeItem === 'skills'} onClick={this.handleItemClick}>Skills</Menu.Item>
                 </Link>
 
-                <Link to="careers" spy={true} smooth={true} duration={500}>
-                  <Menu.Item className="coltext" name='careers' as='a' active={activeItem === 'careers'} onClick={this.handleItemClick}>Careers</Menu.Item>
+                <Link to="personal" spy={true} smooth={true} duration={500}>
+                  <Menu.Item className="coltext" name='personal' as='a' active={activeItem === 'personal'} onClick={this.handleItemClick}>Personal</Menu.Item>
                 </Link>
 
               </Container>
@@ -141,12 +141,10 @@ class MobileContainer extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Menu.Item as='a' active>Home</Menu.Item>
-            <Menu.Item as='a'>Colin2 Work</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
+            <Menu.Item as='a' active>About</Menu.Item>
+            <Menu.Item as='a'> Projects</Menu.Item>
+            <Menu.Item as='a'>Skills</Menu.Item>
+            <Menu.Item as='a'>Personal</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>
@@ -192,11 +190,11 @@ class HomepageLayout extends Component {
   render() {
     return (
       <ResponsiveContainer>
-        <WorkSeg />
+        <AboutSeg />
         <Segment>
-          <CompanySeg />
+          <ProjectsSeg />
         </Segment>
-        <CareersSeg />
+        <SkillsSeg />
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
           <Container>
             <Grid divided inverted stackable>

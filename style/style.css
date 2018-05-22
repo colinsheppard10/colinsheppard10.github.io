@@ -8,8 +8,27 @@
 }
 
 .colp1{
-    background: url(https://s3.amazonaws.com/johnrudell-port-dev/background.jpg) no-repeat center center scroll;
+    background: url('../images/backgroundAndroid.png') no-repeat center center scroll;
     background-size: cover;
+    opacity: 1;
+}
+
+.colp2{
+    background: url('../images/backgroundEthereum.png') no-repeat center center scroll;
+    background-size: cover;
+    opacity: 1;
+}
+
+.colp3{
+    background: url('../images/backgroundNode.png') no-repeat center center scroll;
+    background-size: cover;
+    opacity: 1;
+}
+
+.colp4{
+    background: url('../images/backgroundOdds.png') no-repeat center center scroll;
+    background-size: cover;
+    opacity: 1;
 }
 
 /* border around top menue bar */
@@ -37,8 +56,30 @@
     color: rgba(1, 21, 51, 0.87) !important;
 }
 
+.ui.header.coltext {
+    color: rgba(1, 21, 51, 0.87) !important;
+}
+
+body {
+    color: rgba(1, 21, 51, 0.87) !important;
+}
+
+.ui.button{
+    color: rgba(1, 21, 51, 0.87) !important;
+}
+
+.ui.inverted.segment.colcolor, .ui.primary.inverted.segment.colcolor {
+    background: #010b16;
+    color: rgba(255,255,255,.9);
+}
+
 .ui.text.container.colcontainer{
     max-width: 200px!important;
+}
+
+.ui.inverted.segment, .ui.primary.inverted.segment {
+    background: #1b1c1d;
+    color: rgba(255,255,255,.9);
 }
 
 p.colparagraph{
