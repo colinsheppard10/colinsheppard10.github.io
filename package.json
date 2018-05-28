@@ -1,4 +1,5 @@
 {
+  "homepage": "https://colinsheppard10.github.io",
   "name": "redux-simple-starter",
   "version": "1.0.0",
   "description": "Simple starter package for Redux with React and Babel support",
