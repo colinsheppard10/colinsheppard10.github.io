@@ -13,7 +13,7 @@ export default class ProjectsSeg extends Component {
                     <Grid celled='internally' columns='equal' stackable>
                         <Grid.Row textAlign='center'>
                             <ModelBasicExample values="Info: info_bot" heading="Info Bot"
-                                paragraph="Info_bot usees a microService architecture to respond to question from a Slack user. The Main Bot service listens for new services to join. This means, the Twitter microService (or any other service) can crash and then reregister itself with the main service without effecting any other microSerivce. Here is an example question flow. (1) The user's input is sent from Slack to the main bot service. (2) WitAI translates the user's text into an a format that our service can understand. (3) Based on the response from WitAI, the main service can determine which microService can answer the user's question."
+                                paragraph="Info_bot usees a microService architecture to respond to question from a Slack user. The Main Bot service listens for new services to join. This means, the Twitter microService (or any other service) can crash and then reregister itself with the main service without effecting any other microSerivce. Here is an example question flow: (1) The user's input is sent from Slack to the main bot service. (2) WitAI translates the user's text into an a format that our service can understand. (3) Based on the response from WitAI, the main service can determine which microService can answer the user's question."
                                 image='../../images/slackBot.png'
                                 firstImage='../../images/nodeJs.png'
                                 firstDescription='Ask a slack bot about what is going on in the world'
@@ -32,9 +32,9 @@ export default class ProjectsSeg extends Component {
                                 firstImage='../../images/android.png'
                                 firstDescription='A networked light switch, giving a user control over their home lighting with an Android app'
                                 gitHubLink='https://github.com/colinsheppard10/ShineAndRise' />
-                            <ModelBasicExample values="four value" heading="Odds and Ends"
-                                paragraph="four paragraph"
-                                image='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg'
+                            <ModelBasicExample values="Info: Odds and Ends" heading="Odds and Ends"
+                                paragraph="This repo is a collection of networking project odds and ends. The only stand alone project is DirectMessage which is a TCP messaging app. DirectMessage allows two people within the same subnet to easily connect their phones and pass messages between eachother."
+                                image='../../images/directMessage.png'
                                 firstImage='../../images/java.png'
                                 firstDescription='A few more side projects'
                                 gitHubLink='https://github.com/colinsheppard10/Networking' />

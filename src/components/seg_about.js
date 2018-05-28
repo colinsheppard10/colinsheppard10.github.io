@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Segment, Grid, Header, Button, Image } from 'semantic-ui-react'
+import { Segment, Grid, Header, Button, Image, Icon } from 'semantic-ui-react'
 import { Element } from 'react-scroll';
 
 
@@ -32,7 +32,7 @@ export default class AboutSeg extends Component {
                             </Grid.Row>
                             <Grid.Row>
                                 <Grid.Column textAlign='center'>
-                                    <Button size='huge'>GitHub</Button>
+                                    <Button href='https://github.com/colinsheppard10' target="_blank" size='huge'> GitHub</Button>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>

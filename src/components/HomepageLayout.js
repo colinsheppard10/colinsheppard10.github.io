@@ -203,8 +203,8 @@ class HomepageLayout extends Component {
                   <Header inverted as='h4' content='Contact' />
                   <List link inverted>
                     <List.Item as='a'>colinsheppard10@gmail.com</List.Item>
-                    <List.Item as='a'>LinkedIn</List.Item>
-                    <List.Item as='a'>GitHub</List.Item>
+                    <List.Item as='a' href='https://www.linkedin.com/in/colin-sheppard-96a37714a/' target="_blank">LinkedIn</List.Item>
+                    <List.Item as='a' href='https://github.com/colinsheppard10' target="_blank">GitHub</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
