@@ -195,7 +195,7 @@ class HomepageLayout extends Component {
           <Container>
             <Grid divided inverted stackable>
               <Grid.Row>
-                <Grid.Column width={3}>
+                <Grid.Column width={4}>
                   <Header inverted as='h4' content='Contact' />
                   <List link inverted>
                     <List.Item as='a'>colinsheppard10@gmail.com</List.Item>
@@ -203,7 +203,7 @@ class HomepageLayout extends Component {
                     <List.Item as='a' href='https://github.com/colinsheppard10' target="_blank">GitHub</List.Item>
                   </List>
                 </Grid.Column>
-                <Grid.Column width={7}>
+                <Grid.Column width={6}>
                   <Header as='h4' inverted>I can make you a site like this</Header>
                   <p> -If you're working on something cool I'll probably do it for free.</p>
                 </Grid.Column>
