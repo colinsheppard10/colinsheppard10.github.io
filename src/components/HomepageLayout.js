@@ -132,8 +132,9 @@ class MobileContainer extends Component {
   }
 
   handleItemClick = (e, { name }) => {
-    this.setState({ activeItem: name })
-    this.setState({ sidebarOpened: !this.state.sidebarOpened })
+    this.setState({ sidebarOpened: !this.state.sidebarOpened },
+      this.setState({ activeItem: name })
+    )
   }
 
   handleToggle = () => this.setState({ sidebarOpened: !this.state.sidebarOpened })
@@ -147,19 +148,19 @@ class MobileContainer extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Link to="about" spy={true} smooth={true} duration={500}>
+            <Link to="about" spy={true} smooth={true} duration={0}>
               <Menu.Item className="coltext" name='about' as='a' active={activeItem === 'about'} onClick={this.handleItemClick} >About</Menu.Item>
             </Link>
 
-            <Link to="projects" spy={true} smooth={true} duration={500}>
+            <Link to="projects" spy={true} smooth={true} duration={0}>
               <Menu.Item className="coltext" className="coltext" name='projects' as='a' active={activeItem === 'projects'} onClick={this.handleItemClick}>Projects</Menu.Item>
             </Link>
 
-            <Link to="skills" spy={true} smooth={true} duration={500}>
+            <Link to="skills" spy={true} smooth={true} duration={0}>
               <Menu.Item className="coltext" className="coltext" name='skills' as='a' active={activeItem === 'skills'} onClick={this.handleItemClick}>Skills</Menu.Item>
             </Link>
 
-            <Link to="personal" spy={true} smooth={true} duration={500}>
+            <Link to="personal" spy={true} smooth={true} duration={0}>
               <Menu.Item className="coltext" name='personal' as='a' active={activeItem === 'personal'} onClick={this.handleItemClick}>Personal</Menu.Item>
             </Link>
           </Sidebar>

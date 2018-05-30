@@ -66107,8 +66107,7 @@
 	    }, _this2.handleItemClick = function (e, _ref5) {
 	      var name = _ref5.name;
 
-	      _this2.setState({ activeItem: name });
-	      _this2.setState({ sidebarOpened: !_this2.state.sidebarOpened });
+	      _this2.setState({ sidebarOpened: !_this2.state.sidebarOpened }, _this2.setState({ activeItem: name }));
 	    }, _this2.handleToggle = function () {
 	      return _this2.setState({ sidebarOpened: !_this2.state.sidebarOpened });
 	    }, _temp2), _possibleConstructorReturn(_this2, _ret2);
@@ -66135,7 +66134,7 @@
 	            { as: _semanticUiReact.Menu, animation: 'uncover', inverted: true, vertical: true, visible: sidebarOpened },
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'about', spy: true, smooth: true, duration: 500 },
+	              { to: 'about', spy: true, smooth: true, duration: 0 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                { className: 'coltext', name: 'about', as: 'a', active: activeItem === 'about', onClick: this.handleItemClick },
@@ -66144,7 +66143,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'projects', spy: true, smooth: true, duration: 500 },
+	              { to: 'projects', spy: true, smooth: true, duration: 0 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                (_React$createElement3 = { className: 'coltext' }, _defineProperty(_React$createElement3, 'className', 'coltext'), _defineProperty(_React$createElement3, 'name', 'projects'), _defineProperty(_React$createElement3, 'as', 'a'), _defineProperty(_React$createElement3, 'active', activeItem === 'projects'), _defineProperty(_React$createElement3, 'onClick', this.handleItemClick), _React$createElement3),
@@ -66153,7 +66152,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'skills', spy: true, smooth: true, duration: 500 },
+	              { to: 'skills', spy: true, smooth: true, duration: 0 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                (_React$createElement4 = { className: 'coltext' }, _defineProperty(_React$createElement4, 'className', 'coltext'), _defineProperty(_React$createElement4, 'name', 'skills'), _defineProperty(_React$createElement4, 'as', 'a'), _defineProperty(_React$createElement4, 'active', activeItem === 'skills'), _defineProperty(_React$createElement4, 'onClick', this.handleItemClick), _React$createElement4),
@@ -66162,7 +66161,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'personal', spy: true, smooth: true, duration: 500 },
+	              { to: 'personal', spy: true, smooth: true, duration: 0 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                { className: 'coltext', name: 'personal', as: 'a', active: activeItem === 'personal', onClick: this.handleItemClick },
