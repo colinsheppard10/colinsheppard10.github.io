@@ -28,7 +28,7 @@ export default class SkillsSeg extends Component {
                         </Divider>
                         <p className="colcolor" style={{ fontSize: '1.33em' }}>
                             In my time at Aeris I primarily worked on Java and JavaScript backend services. Through this work, I gained experience in surrounding technologies like: Node JS, Maven, and the Spring framework. I also used Kafka, Java RESTful web services, and  Rabbit MQ for passing messages between services. My database experience is in Cassandra, Redis, and SQL.<br />My front-end skills are primarily in React/Redux along with some limited experience in AngularJS.
-                            <br />In my current BlockChain development, I use Truffle to deploy contracts and web3 for front-end integration. I make use of OpenZepplin’s open source library allowing my crowdsale to mint ERC20 tokens.
+                            <br />In my current BlockChain development, I use Truffle to deploy contracts and Web3 for front-end integration. I make use of OpenZepplin’s open source library allowing my crowdsale to mint ERC20 tokens.
                         </p>
                         <Element name="personal" >
 

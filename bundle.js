@@ -68487,7 +68487,7 @@
 	                            _react2.default.createElement('br', null),
 	                            'My front-end skills are primarily in React/Redux along with some limited experience in AngularJS.',
 	                            _react2.default.createElement('br', null),
-	                            'In my current BlockChain development, I use Truffle to deploy contracts and web3 for front-end integration. I make use of OpenZepplin\u2019s open source library allowing my crowdsale to mint ERC20 tokens.'
+	                            'In my current BlockChain development, I use Truffle to deploy contracts and Web3 for front-end integration. I make use of OpenZepplin\u2019s open source library allowing my crowdsale to mint ERC20 tokens.'
 	                        ),
 	                        _react2.default.createElement(
 	                            _reactScroll.Element,
@@ -69025,13 +69025,13 @@
 	                            _semanticUiReact.Grid.Row,
 	                            { textAlign: 'center' },
 	                            _react2.default.createElement(_modelBasicExample2.default, { values: 'Info: info_bot', heading: 'Info Bot',
-	                                paragraph: 'Info_bot usees a microService architecture to respond to question from a Slack user. The Main Bot service listens for new services to join. This means, the Twitter microService (or any other service) can crash and then reregister itself with the main service without effecting any other microSerivce. Here is an example question flow: (1) The user\'s input is sent from Slack to the main bot service. (2) WitAI translates the user\'s text into an a format that our service can understand. (3) Based on the response from WitAI, the main service can determine which microService can answer the user\'s question.',
+	                                paragraph: 'Info_bot understands human language and can answer questions with the help of Google and Twitter API\'s. I use a microService architecture to respond to question from a Slack user. The Main Bot service listens for new services to join. This means, the Twitter microService (or any other service) can crash and then reregister itself with the main service without effecting any other microSerivce. Here is an example question flow: (1) The user\'s input is sent from Slack to the main bot service. (2) WitAI translates the user\'s text into an a format that our service can understand. (3) Based on the response from WitAI, the main service can determine which microService can answer the user\'s question.',
 	                                image: '../../images/slackBot.png',
 	                                firstImage: '../../images/nodeJs.png',
-	                                firstDescription: 'Ask a slack bot about what is going on in the world',
+	                                firstDescription: 'Ask a slack bot "what is going on in the world"',
 	                                gitHubLink: 'https://github.com/colinsheppard10/slackBot' }),
 	                            _react2.default.createElement(_modelBasicExample2.default, { values: 'Info: Ethereum Crowdfunding With ERC20 Tokens', heading: 'X-Fit Coin',
-	                                paragraph: 'The X-Fit Coin is a crowdfunding platform for CrossFit gyms. The solidity crowdsale smart contract is based on OpenZepplin\'s open source library. The X-Fit tokens are ERC20 tokens. I used truffle to deploy my smart contracts, and web3 for front end intergation.',
+	                                paragraph: 'The X-Fit Coin is a crowdfunding platform for CrossFit gyms. The solidity crowdsale smart contract is based on OpenZepplin\'s open source library. The X-Fit tokens are ERC20 tokens. I used truffle to deploy my smart contracts, and Web3 for front end intergation.',
 	                                image: '../../images/xFitCoin.png',
 	                                firstImage: '../../images/ethereum.png',
 	                                firstDescription: 'An ERC20 token crowdfunding platform for Cross-Fit gyms',
