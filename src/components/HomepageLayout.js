@@ -65,16 +65,16 @@ HomepageHeading.propTypes = {
  * It can be more complicated, but you can create really flexible markup.
  */
 class DesktopContainer extends Component {
-  state = { activeItem: 'home' } // remove this and only have is as global activeItem
+  state = { activeItem: 'home' }
 
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name }) // change this to call active item action
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
     const { children } = this.props
     const { fixed } = this.state
-    const { activeItem } = this.state // remove this
+    const { activeItem } = this.state
 
     return (
       <Responsive {...Responsive.onlyComputer}>
@@ -123,7 +123,7 @@ DesktopContainer.propTypes = {
 }
 
 class MobileContainer extends Component {
-  state = {}
+  state = { activeItem: 'home' }
 
   handlePusherClick = () => {
     const { sidebarOpened } = this.state
@@ -131,20 +131,37 @@ class MobileContainer extends Component {
     if (sidebarOpened) this.setState({ sidebarOpened: false })
   }
 
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name })
+    this.setState({ sidebarOpened: !this.state.sidebarOpened })
+  }
+
   handleToggle = () => this.setState({ sidebarOpened: !this.state.sidebarOpened })
 
   render() {
     const { children } = this.props
     const { sidebarOpened } = this.state
+    const { activeItem } = this.state
 
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Menu.Item as='a' active>About</Menu.Item>
-            <Menu.Item as='a'> Projects</Menu.Item>
-            <Menu.Item as='a'>Skills</Menu.Item>
-            <Menu.Item as='a'>Personal</Menu.Item>
+            <Link to="about" spy={true} smooth={true} duration={500}>
+              <Menu.Item className="coltext" name='about' as='a' active={activeItem === 'about'} onClick={this.handleItemClick} >About</Menu.Item>
+            </Link>
+
+            <Link to="projects" spy={true} smooth={true} duration={500}>
+              <Menu.Item className="coltext" className="coltext" name='projects' as='a' active={activeItem === 'projects'} onClick={this.handleItemClick}>Projects</Menu.Item>
+            </Link>
+
+            <Link to="skills" spy={true} smooth={true} duration={500}>
+              <Menu.Item className="coltext" className="coltext" name='skills' as='a' active={activeItem === 'skills'} onClick={this.handleItemClick}>Skills</Menu.Item>
+            </Link>
+
+            <Link to="personal" spy={true} smooth={true} duration={500}>
+              <Menu.Item className="coltext" name='personal' as='a' active={activeItem === 'personal'} onClick={this.handleItemClick}>Personal</Menu.Item>
+            </Link>
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>

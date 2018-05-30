@@ -65989,9 +65989,7 @@
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = DesktopContainer.__proto__ || Object.getPrototypeOf(DesktopContainer)).call.apply(_ref2, [this].concat(args))), _this), _this.state = { activeItem: 'home' // remove this and only have is as global activeItem
-
-	    }, _this.hideFixedMenu = function () {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = DesktopContainer.__proto__ || Object.getPrototypeOf(DesktopContainer)).call.apply(_ref2, [this].concat(args))), _this), _this.state = { activeItem: 'home' }, _this.hideFixedMenu = function () {
 	      return _this.setState({ fixed: false });
 	    }, _this.showFixedMenu = function () {
 	      return _this.setState({ fixed: true });
@@ -66003,14 +66001,13 @@
 
 	  _createClass(DesktopContainer, [{
 	    key: 'render',
-	    // change this to call active item action
-
 	    value: function render() {
 	      var _React$createElement, _React$createElement2;
 
 	      var children = this.props.children;
 	      var fixed = this.state.fixed;
-	      var activeItem = this.state.activeItem; // remove this
+	      var activeItem = this.state.activeItem;
+
 
 	      return _react2.default.createElement(
 	        _semanticUiReact.Responsive,
@@ -66102,11 +66099,16 @@
 	      args[_key2] = arguments[_key2];
 	    }
 
-	    return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_ref4 = MobileContainer.__proto__ || Object.getPrototypeOf(MobileContainer)).call.apply(_ref4, [this].concat(args))), _this2), _this2.state = {}, _this2.handlePusherClick = function () {
+	    return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_ref4 = MobileContainer.__proto__ || Object.getPrototypeOf(MobileContainer)).call.apply(_ref4, [this].concat(args))), _this2), _this2.state = { activeItem: 'home' }, _this2.handlePusherClick = function () {
 	      var sidebarOpened = _this2.state.sidebarOpened;
 
 
 	      if (sidebarOpened) _this2.setState({ sidebarOpened: false });
+	    }, _this2.handleItemClick = function (e, _ref5) {
+	      var name = _ref5.name;
+
+	      _this2.setState({ activeItem: name });
+	      _this2.setState({ sidebarOpened: !_this2.state.sidebarOpened });
 	    }, _this2.handleToggle = function () {
 	      return _this2.setState({ sidebarOpened: !_this2.state.sidebarOpened });
 	    }, _temp2), _possibleConstructorReturn(_this2, _ret2);
@@ -66115,8 +66117,11 @@
 	  _createClass(MobileContainer, [{
 	    key: 'render',
 	    value: function render() {
+	      var _React$createElement3, _React$createElement4;
+
 	      var children = this.props.children;
 	      var sidebarOpened = this.state.sidebarOpened;
+	      var activeItem = this.state.activeItem;
 
 
 	      return _react2.default.createElement(
@@ -66129,24 +66134,40 @@
 	            _semanticUiReact.Sidebar,
 	            { as: _semanticUiReact.Menu, animation: 'uncover', inverted: true, vertical: true, visible: sidebarOpened },
 	            _react2.default.createElement(
-	              _semanticUiReact.Menu.Item,
-	              { as: 'a', active: true },
-	              'About'
+	              _reactScroll.Link,
+	              { to: 'about', spy: true, smooth: true, duration: 500 },
+	              _react2.default.createElement(
+	                _semanticUiReact.Menu.Item,
+	                { className: 'coltext', name: 'about', as: 'a', active: activeItem === 'about', onClick: this.handleItemClick },
+	                'About'
+	              )
 	            ),
 	            _react2.default.createElement(
-	              _semanticUiReact.Menu.Item,
-	              { as: 'a' },
-	              ' Projects'
+	              _reactScroll.Link,
+	              { to: 'projects', spy: true, smooth: true, duration: 500 },
+	              _react2.default.createElement(
+	                _semanticUiReact.Menu.Item,
+	                (_React$createElement3 = { className: 'coltext' }, _defineProperty(_React$createElement3, 'className', 'coltext'), _defineProperty(_React$createElement3, 'name', 'projects'), _defineProperty(_React$createElement3, 'as', 'a'), _defineProperty(_React$createElement3, 'active', activeItem === 'projects'), _defineProperty(_React$createElement3, 'onClick', this.handleItemClick), _React$createElement3),
+	                'Projects'
+	              )
 	            ),
 	            _react2.default.createElement(
-	              _semanticUiReact.Menu.Item,
-	              { as: 'a' },
-	              'Skills'
+	              _reactScroll.Link,
+	              { to: 'skills', spy: true, smooth: true, duration: 500 },
+	              _react2.default.createElement(
+	                _semanticUiReact.Menu.Item,
+	                (_React$createElement4 = { className: 'coltext' }, _defineProperty(_React$createElement4, 'className', 'coltext'), _defineProperty(_React$createElement4, 'name', 'skills'), _defineProperty(_React$createElement4, 'as', 'a'), _defineProperty(_React$createElement4, 'active', activeItem === 'skills'), _defineProperty(_React$createElement4, 'onClick', this.handleItemClick), _React$createElement4),
+	                'Skills'
+	              )
 	            ),
 	            _react2.default.createElement(
-	              _semanticUiReact.Menu.Item,
-	              { as: 'a' },
-	              'Personal'
+	              _reactScroll.Link,
+	              { to: 'personal', spy: true, smooth: true, duration: 500 },
+	              _react2.default.createElement(
+	                _semanticUiReact.Menu.Item,
+	                { className: 'coltext', name: 'personal', as: 'a', active: activeItem === 'personal', onClick: this.handleItemClick },
+	                'Personal'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -66184,8 +66205,8 @@
 	  children: _propTypes2.default.node
 	};
 
-	var ResponsiveContainer = function ResponsiveContainer(_ref5) {
-	  var children = _ref5.children;
+	var ResponsiveContainer = function ResponsiveContainer(_ref6) {
+	  var children = _ref6.children;
 	  return _react2.default.createElement(
 	    'div',
 	    null,
