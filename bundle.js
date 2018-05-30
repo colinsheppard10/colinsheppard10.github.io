@@ -65945,10 +65945,10 @@
 	    { text: true },
 	    _react2.default.createElement(_semanticUiReact.Header, {
 	      as: 'h1',
-	      content: 'Colin Sheppard',
+	      content: 'Colin Patrice Sheppard',
 	      inverted: true,
 	      style: {
-	        fontSize: mobile ? '2em' : '4em',
+	        fontSize: mobile ? '2em' : '3.6em',
 	        fontWeight: 'normal',
 	        marginBottom: 0,
 	        marginTop: mobile ? '1.5em' : '3em'
@@ -68514,7 +68514,7 @@
 	                            _react2.default.createElement(
 	                                'p',
 	                                { className: 'colcolor', style: { fontSize: '1.33em' } },
-	                                'I might spend time other places, but Chicago is my home. I grew up playing football and rugby and I function best within a small team. Although I hold strong opinions, I believe "If the whole is to be Art, the parts must not try to be".'
+	                                'I might spend time other places, but Chicago is my home. I hold a degree in Computer Engineering from the University of Illinois at Chicago. I grew up playing football and rugby and I function best within a small team. Although I have strong opinions, I believe "If the whole is to be Art, the parts must not try to be".'
 	                            ),
 	                            this.state.buttonVisible && _react2.default.createElement(
 	                                _semanticUiReact.Button,
