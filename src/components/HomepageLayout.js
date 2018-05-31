@@ -147,20 +147,20 @@ class MobileContainer extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
-          <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Link to="about" spy={true} smooth={true} duration={0}>
+          <Sidebar as={Menu} inverted vertical visible={sidebarOpened}>
+            <Link to="about" spy={true} smooth={true} duration={500}>
               <Menu.Item className="coltext" name='about' as='a' active={activeItem === 'about'} onClick={this.handleItemClick} >About</Menu.Item>
             </Link>
 
-            <Link to="projects" spy={true} smooth={true} duration={0}>
+            <Link to="projects" spy={true} smooth={true} duration={500}>
               <Menu.Item className="coltext" className="coltext" name='projects' as='a' active={activeItem === 'projects'} onClick={this.handleItemClick}>Projects</Menu.Item>
             </Link>
 
-            <Link to="skills" spy={true} smooth={true} duration={0}>
+            <Link to="skills" spy={true} smooth={true} duration={500}>
               <Menu.Item className="coltext" className="coltext" name='skills' as='a' active={activeItem === 'skills'} onClick={this.handleItemClick}>Skills</Menu.Item>
             </Link>
 
-            <Link to="personal" spy={true} smooth={true} duration={0}>
+            <Link to="personal" spy={true} smooth={true} duration={500}>
               <Menu.Item className="coltext" name='personal' as='a' active={activeItem === 'personal'} onClick={this.handleItemClick}>Personal</Menu.Item>
             </Link>
           </Sidebar>
@@ -221,9 +221,9 @@ class HomepageLayout extends Component {
                     <List.Item as='a' href='https://github.com/colinsheppard10' target="_blank">GitHub</List.Item>
                   </List>
                 </Grid.Column>
-                <Grid.Column width={6}>
-                  <Header as='h4' inverted>I can make you a site like this</Header>
-                  <p> -If you're working on something cool I'll probably do it for free.</p>
+                <Grid.Column width={7}>
+                  <Header as='h4' inverted>This site looks great on your phone too</Header>
+                  <p> - Get intouch with me if you need a site. If you're working on something really cool, I'll probably do it for free</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
