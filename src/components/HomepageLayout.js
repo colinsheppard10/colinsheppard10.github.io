@@ -205,7 +205,7 @@ class HomepageLayout extends Component {
     return (
       <ResponsiveContainer>
         <AboutSeg />
-        <Segment>
+        <Segment >
           <ProjectsSeg />
         </Segment>
         <SkillsSeg />
@@ -222,8 +222,8 @@ class HomepageLayout extends Component {
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
-                  <Header as='h4' inverted>This site looks great on your phone too</Header>
-                  <p> - Get intouch with me if you need a site. If you're working on something really cool, I'll probably do it for free</p>
+                  <Header as='h4' inverted>Get in touch with me</Header>
+                  <p> - I love sharing my skills with inspiring people <br />- p.s. I made this site look awesome on mobile too</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

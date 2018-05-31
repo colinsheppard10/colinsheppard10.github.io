@@ -66131,10 +66131,10 @@
 	          null,
 	          _react2.default.createElement(
 	            _semanticUiReact.Sidebar,
-	            { as: _semanticUiReact.Menu, animation: 'uncover', inverted: true, vertical: true, visible: sidebarOpened },
+	            { as: _semanticUiReact.Menu, inverted: true, vertical: true, visible: sidebarOpened },
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'about', spy: true, smooth: true, duration: 0 },
+	              { to: 'about', spy: true, smooth: true, duration: 500 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                { className: 'coltext', name: 'about', as: 'a', active: activeItem === 'about', onClick: this.handleItemClick },
@@ -66143,7 +66143,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'projects', spy: true, smooth: true, duration: 0 },
+	              { to: 'projects', spy: true, smooth: true, duration: 500 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                (_React$createElement3 = { className: 'coltext' }, _defineProperty(_React$createElement3, 'className', 'coltext'), _defineProperty(_React$createElement3, 'name', 'projects'), _defineProperty(_React$createElement3, 'as', 'a'), _defineProperty(_React$createElement3, 'active', activeItem === 'projects'), _defineProperty(_React$createElement3, 'onClick', this.handleItemClick), _React$createElement3),
@@ -66152,7 +66152,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'skills', spy: true, smooth: true, duration: 0 },
+	              { to: 'skills', spy: true, smooth: true, duration: 500 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                (_React$createElement4 = { className: 'coltext' }, _defineProperty(_React$createElement4, 'className', 'coltext'), _defineProperty(_React$createElement4, 'name', 'skills'), _defineProperty(_React$createElement4, 'as', 'a'), _defineProperty(_React$createElement4, 'active', activeItem === 'skills'), _defineProperty(_React$createElement4, 'onClick', this.handleItemClick), _React$createElement4),
@@ -66161,7 +66161,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactScroll.Link,
-	              { to: 'personal', spy: true, smooth: true, duration: 0 },
+	              { to: 'personal', spy: true, smooth: true, duration: 500 },
 	              _react2.default.createElement(
 	                _semanticUiReact.Menu.Item,
 	                { className: 'coltext', name: 'personal', as: 'a', active: activeItem === 'personal', onClick: this.handleItemClick },
@@ -66286,16 +66286,18 @@
 	                ),
 	                _react2.default.createElement(
 	                  _semanticUiReact.Grid.Column,
-	                  { width: 6 },
+	                  { width: 7 },
 	                  _react2.default.createElement(
 	                    _semanticUiReact.Header,
 	                    { as: 'h4', inverted: true },
-	                    'I can make you a site like this'
+	                    'Get in touch with me'
 	                  ),
 	                  _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    ' -If you\'re working on something cool I\'ll probably do it for free.'
+	                    ' - I love sharing my skills with inspiring people ',
+	                    _react2.default.createElement('br', null),
+	                    '- p.s. I made this site look awesome on mobile too'
 	                  )
 	                )
 	              )
@@ -68534,7 +68536,11 @@
 	                            _react2.default.createElement(
 	                                'p',
 	                                { className: 'colcolor', style: { fontSize: '1.33em' } },
-	                                'I might spend time other places, but Chicago is my home. I hold a degree in Computer Engineering from the University of Illinois at Chicago. I grew up playing football and rugby and I function best within a small team. Although I have strong opinions, I believe "If the whole is to be Art, the parts must not try to be".'
+	                                'I might spend time other places, but Chicago is my home. I hold a degree in Computer Engineering from the University of Illinois at Chicago. ',
+	                                _react2.default.createElement('br', null),
+	                                'I live for those moments when you understand someone or something and you remember "oh yeah the world is interactive". Money does not make me jump out of bed in the morning. ',
+	                                _react2.default.createElement('br', null),
+	                                'I have strong opinions, but I believe "If the whole is to be Art, the parts must not try to be".'
 	                            ),
 	                            this.state.buttonVisible && _react2.default.createElement(
 	                                _semanticUiReact.Button,

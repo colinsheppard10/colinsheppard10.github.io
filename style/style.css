@@ -86,3 +86,7 @@ p.colparagraph{
     max-width: 400px;
 }
 
+/* this was for the grey shaded background but it ruins the icon boxes
+.ui.vertical.segment {
+    background: none #00000005 !important;
+} */

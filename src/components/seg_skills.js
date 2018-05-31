@@ -43,7 +43,9 @@ export default class SkillsSeg extends Component {
 
                             <Header className="colcolor" as='h3' style={{ fontSize: '1.33em' }}>Born and raised in Beverly on the south side of Chicago</Header>
                             <p className="colcolor" style={{ fontSize: '1.33em' }}>
-                                I might spend time other places, but Chicago is my home. I hold a degree in Computer Engineering from the University of Illinois at Chicago. I grew up playing football and rugby and I function best within a small team. Although I have strong opinions, I believe "If the whole is to be Art, the parts must not try to be".
+                                I might spend time other places, but Chicago is my home. I hold a degree in Computer Engineering from the University of Illinois at Chicago. <br />
+                                I live for those moments when you understand someone or something and you remember "oh yeah the world is interactive". Money does not make me jump out of bed in the morning. <br />
+                                I have strong opinions, but I believe "If the whole is to be Art, the parts must not try to be".
                             </p>
                             {this.state.buttonVisible && <Button onClick={() => {
                                 this.setState({
