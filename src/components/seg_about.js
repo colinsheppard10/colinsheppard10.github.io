@@ -25,8 +25,8 @@ export default class AboutSeg extends Component {
                                     <Image
                                         bordered
                                         rounded
-                                        size='large'
-                                        src='https://s3.amazonaws.com/johnrudell-port-dev/background.jpg'
+                                        size='medium'
+                                        src='../../images/headShot.jpg'
                                     />
                                 </Grid.Column>
                             </Grid.Row>

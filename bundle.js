@@ -65951,7 +65951,7 @@
 	        fontSize: mobile ? '2em' : '3.6em',
 	        fontWeight: 'normal',
 	        marginBottom: 0,
-	        marginTop: mobile ? '1.5em' : '3em'
+	        marginTop: mobile ? '1.5em' : '4em'
 	      }
 	    }),
 	    _react2.default.createElement(_semanticUiReact.Header, {
@@ -69176,8 +69176,8 @@
 	                                    _react2.default.createElement(_semanticUiReact.Image, {
 	                                        bordered: true,
 	                                        rounded: true,
-	                                        size: 'large',
-	                                        src: 'https://s3.amazonaws.com/johnrudell-port-dev/background.jpg'
+	                                        size: 'medium',
+	                                        src: '../../images/headShot.jpg'
 	                                    })
 	                                )
 	                            ),

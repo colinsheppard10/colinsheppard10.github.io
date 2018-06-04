@@ -3,7 +3,7 @@
 
 /* background on top panel */
 .ui.inverted.segment.colheading{
-    background: url(https://s3.amazonaws.com/johnrudell-port-dev/background.jpg) no-repeat center center scroll;
+    background: url(../images/LauPhoto.jpg) no-repeat center center scroll;
     background-size: cover;
 }
 
