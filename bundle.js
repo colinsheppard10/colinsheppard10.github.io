@@ -22374,6 +22374,8 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -22386,53 +22388,89 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ModalBasicExample = function ModalBasicExample(_ref) {
-	    var values = _ref.values,
-	        heading = _ref.heading,
-	        paragraph = _ref.paragraph,
-	        image = _ref.image,
-	        firstImage = _ref.firstImage,
-	        firstDescription = _ref.firstDescription,
-	        gitHubLink = _ref.gitHubLink;
-	    return _react2.default.createElement(
-	        _semanticUiReact.Modal,
-	        { size: 'large scrolling', trigger: _react2.default.createElement(_column_with_popout2.default, { heading: heading, firstImage: firstImage, firstDescription: firstDescription }), closeIcon: true },
-	        _react2.default.createElement(
-	            _semanticUiReact.Modal.Header,
-	            null,
-	            heading
-	        ),
-	        _react2.default.createElement(
-	            _semanticUiReact.Modal.Content,
-	            { image: true, scrolling: true },
-	            _react2.default.createElement(_semanticUiReact.Image, { wrapped: true, fluid: true, src: image }),
-	            _react2.default.createElement(
-	                _semanticUiReact.Modal.Description,
-	                null,
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalBasicExample = function (_Component) {
+	    _inherits(ModalBasicExample, _Component);
+
+	    function ModalBasicExample(props) {
+	        _classCallCheck(this, ModalBasicExample);
+
+	        var _this = _possibleConstructorReturn(this, (ModalBasicExample.__proto__ || Object.getPrototypeOf(ModalBasicExample)).call(this, props));
+
+	        _this.toggle = function () {
+	            _this.setState({ modalOpen: !_this.state.modalOpen });
+	        };
+
+	        _this.state = { modalOpen: false };
+	        return _this;
+	    }
+
+	    _createClass(ModalBasicExample, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props,
+	                values = _props.values,
+	                heading = _props.heading,
+	                paragraph = _props.paragraph,
+	                image = _props.image,
+	                firstDescription = _props.firstDescription,
+	                gitHubLink = _props.gitHubLink,
+	                firstImage = _props.firstImage;
+
+	            return _react2.default.createElement(
+	                _semanticUiReact.Modal,
+	                { open: this.state.modalOpen, size: 'large scrolling', trigger: _react2.default.createElement(_column_with_popout2.default, { onClick: this.toggle, heading: heading, firstImage: firstImage, firstDescription: firstDescription }) },
 	                _react2.default.createElement(
-	                    _semanticUiReact.Header,
+	                    'div',
 	                    null,
-	                    values
+	                    _react2.default.createElement(_semanticUiReact.Icon, { className: 'colicon', name: 'close', style: { padding: '.3em .2em' }, onClick: this.toggle }),
+	                    _react2.default.createElement('br', null)
 	                ),
 	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'colparagraph' },
-	                    paragraph
+	                    _semanticUiReact.Modal.Header,
+	                    null,
+	                    heading
+	                ),
+	                _react2.default.createElement(
+	                    _semanticUiReact.Modal.Content,
+	                    { image: true, scrolling: true },
+	                    _react2.default.createElement(_semanticUiReact.Image, { wrapped: true, fluid: true, src: image }),
+	                    _react2.default.createElement(
+	                        _semanticUiReact.Modal.Description,
+	                        null,
+	                        _react2.default.createElement(
+	                            _semanticUiReact.Header,
+	                            null,
+	                            values
+	                        ),
+	                        _react2.default.createElement(
+	                            'p',
+	                            { className: 'colparagraph' },
+	                            paragraph
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    _semanticUiReact.Modal.Actions,
+	                    null,
+	                    _react2.default.createElement(
+	                        _semanticUiReact.Button,
+	                        { a: true, href: gitHubLink, target: '_blank', primary: true },
+	                        _react2.default.createElement(_semanticUiReact.Icon, { size: 'large', name: 'github' }),
+	                        ' GitHub'
+	                    )
 	                )
-	            )
-	        ),
-	        _react2.default.createElement(
-	            _semanticUiReact.Modal.Actions,
-	            null,
-	            _react2.default.createElement(
-	                _semanticUiReact.Button,
-	                { a: true, href: gitHubLink, target: '_blank', primary: true },
-	                _react2.default.createElement(_semanticUiReact.Icon, { size: 'large', name: 'github' }),
-	                ' GitHub'
-	            )
-	        )
-	    );
-	};
+	            );
+	        }
+	    }]);
+
+	    return ModalBasicExample;
+	}(_react.Component);
 
 	exports.default = ModalBasicExample;
 
