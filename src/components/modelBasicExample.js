@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ColumnWithPopout from './column_with_popout';
-import { Button, Header, Image, Modal, Grid, Container, Icon } from 'semantic-ui-react'
+import { Button, Header, Image, Modal, Grid, Container, Icon, Popup } from 'semantic-ui-react'
 
 class ModalBasicExample extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class ModalBasicExample extends Component {
     }
 
     render() {
-        const { values, heading, paragraph, image, firstDescription, gitHubLink, firstImage } = this.props;
+        const { values, heading, paragraph, image, firstDescription, gitHubLink, firstImage, liveDemo } = this.props;
         return (
             <Modal open={this.state.modalOpen} size='large scrolling' trigger={<ColumnWithPopout onClick={this.toggle} heading={heading} firstImage={firstImage} firstDescription={firstDescription}></ColumnWithPopout>}>
                 <div>
@@ -31,9 +31,22 @@ class ModalBasicExample extends Component {
                     </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>
+                    {liveDemo &&
+                        <Popup trigger={
+                            <Button a href={liveDemo} target="_blank" primary>
+                                <Icon size='large' name='ethereum' /> Live Demo
+                            </Button>
+                        } content={
+                            // <Image
+                            //     size='big'
+                            //     src='../../images/liamNeeson.png'
+                            // />
+                            <p>You will need to install MetaMask to interact with the site</p>
+                        } />
+                    }
                     <Button a href={gitHubLink} target="_blank" primary>
                         <Icon size='large' name='github' /> GitHub
-                </Button>
+                    </Button>
                 </Modal.Actions>
             </Modal>
         )

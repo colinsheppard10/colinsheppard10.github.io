@@ -23,7 +23,8 @@ export default class ProjectsSeg extends Component {
                                 image='../../images/xFitCoin.png'
                                 firstImage='../../images/ethereum.png'
                                 firstDescription='An ERC20 token crowdfunding platform for Cross-Fit gyms'
-                                gitHubLink='https://github.com/GenusDev/crossfit-coin-backend' />
+                                gitHubLink='https://github.com/GenusDev/crossfit-coin-backend'
+                                liveDemo='http://ec2-18-207-197-213.compute-1.amazonaws.com:3000/' />
                         </Grid.Row>
                         <Grid.Row textAlign='center'>
                             <ModelBasicExample values="Info: Shine and Rise" heading="Shine and Rise"

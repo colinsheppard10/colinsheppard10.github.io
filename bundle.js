@@ -22420,7 +22420,8 @@
 	                image = _props.image,
 	                firstDescription = _props.firstDescription,
 	                gitHubLink = _props.gitHubLink,
-	                firstImage = _props.firstImage;
+	                firstImage = _props.firstImage,
+	                liveDemo = _props.liveDemo;
 
 	            return _react2.default.createElement(
 	                _semanticUiReact.Modal,
@@ -22458,6 +22459,21 @@
 	                _react2.default.createElement(
 	                    _semanticUiReact.Modal.Actions,
 	                    null,
+	                    liveDemo && _react2.default.createElement(_semanticUiReact.Popup, { trigger: _react2.default.createElement(
+	                            _semanticUiReact.Button,
+	                            { a: true, href: liveDemo, target: '_blank', primary: true },
+	                            _react2.default.createElement(_semanticUiReact.Icon, { size: 'large', name: 'ethereum' }),
+	                            ' Live Demo'
+	                        ), content:
+	                        // <Image
+	                        //     size='big'
+	                        //     src='../../images/liamNeeson.png'
+	                        // />
+	                        _react2.default.createElement(
+	                            'p',
+	                            null,
+	                            'You will need to install MetaMask to interact with the site'
+	                        ) }),
 	                    _react2.default.createElement(
 	                        _semanticUiReact.Button,
 	                        { a: true, href: gitHubLink, target: '_blank', primary: true },
@@ -69089,7 +69105,7 @@
 	                            _semanticUiReact.Grid.Row,
 	                            { textAlign: 'center' },
 	                            _react2.default.createElement(_modelBasicExample2.default, { values: 'Info: info_bot', heading: 'Info Bot',
-	                                paragraph: 'Info_bot understands human language and can answer questions with the help of Google and Twitter API\'s. I use a microService architecture to respond to question from a Slack user. The Main Bot service listens for new services to join. This means, the Twitter microService (or any other service) can crash and then reregister itself with the main service without effecting any other microSerivce. Here is an example question flow: (1) The user\'s input is sent from Slack to the main bot service. (2) WitAI translates the user\'s text into an a format that our service can understand. (3) Based on the response from WitAI, the main service can determine which microService can answer the user\'s question.',
+	                                paragraph: 'Info_bot understands human language and can answer questions with the help of Google and Twitter API\'s. I use a microService architecture to respond to questions from a Slack user. The Main Bot service listens for new services to join. This means, the Twitter microService (or any other service) can crash and then reregister itself with the main service without affecting any other microSerivce. Here is an example question flow: (1) The user\'s input is sent from Slack to the main bot service. (2) WitAI translates the user\'s text into an a format that our service can understand. (3) Based on the response from WitAI, the main service can determine which microService can answer the user\'s question.',
 	                                image: '../../images/slackBot.png',
 	                                firstImage: '../../images/nodeJs.png',
 	                                firstDescription: 'Ask a slack bot "what is going on in the world"',
@@ -69099,7 +69115,8 @@
 	                                image: '../../images/xFitCoin.png',
 	                                firstImage: '../../images/ethereum.png',
 	                                firstDescription: 'An ERC20 token crowdfunding platform for Cross-Fit gyms',
-	                                gitHubLink: 'https://github.com/GenusDev/crossfit-coin-backend' })
+	                                gitHubLink: 'https://github.com/GenusDev/crossfit-coin-backend',
+	                                liveDemo: 'http://ec2-18-207-197-213.compute-1.amazonaws.com:3000/' })
 	                        ),
 	                        _react2.default.createElement(
 	                            _semanticUiReact.Grid.Row,
