@@ -5,6 +5,7 @@
 .ui.inverted.segment.colheading{
     background: url(../images/LauPhoto.jpg) no-repeat center center scroll;
     background-size: cover;
+    background-attachment:fixed; 
 }
 
 .colp1{
