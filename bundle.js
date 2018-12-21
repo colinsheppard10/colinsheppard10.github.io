@@ -69223,7 +69223,13 @@
 	                                    _react2.default.createElement(
 	                                        'p',
 	                                        { className: 'colcolor', style: { fontSize: '1.33em' } },
-	                                        'I live in a tech incubator in NYC where I am working on an Ethereum BlockChain project in the real estate space.                                  '
+	                                        'I live in NYC where I am working on an Ethereum ',
+	                                        _react2.default.createElement(
+	                                            'a',
+	                                            { href: 'https://www.realblocks.com', target: '_blank' },
+	                                            'BlockChain project'
+	                                        ),
+	                                        ' in the real estate space.                                  '
 	                                    )
 	                                ),
 	                                _react2.default.createElement(
