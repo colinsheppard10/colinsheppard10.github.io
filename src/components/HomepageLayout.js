@@ -79,7 +79,7 @@ class DesktopContainer extends Component {
     return (
       <Responsive {...Responsive.onlyComputer}>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment className="colheading" inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
+          <Segment className="colheading" inverted textAlign='center' style={{ minHeight: '100vh', padding: '1em 0em' }} vertical>
 
             <Element name="about" />
             <Menu
