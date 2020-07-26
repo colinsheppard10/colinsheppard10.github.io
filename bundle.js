@@ -69630,11 +69630,11 @@
 	                                    _react2.default.createElement(
 	                                        'p',
 	                                        { className: 'colcolor', style: { fontSize: '1.33em' } },
-	                                        'I live in NYC where I am working on an Ethereum ',
+	                                        'I live in NYC where I work for a ',
 	                                        _react2.default.createElement(
 	                                            'a',
 	                                            { href: 'https://www.realblocks.com', target: '_blank' },
-	                                            'BlockChain project'
+	                                            'fintech company'
 	                                        ),
 	                                        ' in the real estate space.                                  '
 	                                    )

@@ -19,7 +19,7 @@ export default class AboutSeg extends Component {
                                     </p>
                                     <Header className="colcolor" as='h3' style={{ fontSize: '2em' }}>Currently...</Header>
                                     <p className="colcolor" style={{ fontSize: '1.33em' }}>
-                                        I live in NYC where I am working on an Ethereum <a href='https://www.realblocks.com' target="_blank">BlockChain project</a> in the real estate space.                                  </p>
+                                        I live in NYC where I work for a <a href='https://www.realblocks.com' target="_blank">fintech company</a> in the real estate space.                                  </p>
                                 </Grid.Column>
                                 <Grid.Column floated='right' width={6}>
                                     <Image
