@@ -9,6 +9,7 @@ import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
 import Input from '../elements/Input';
+import { BASE_AWS_URL, EMAIL_REGEX } from '../../utils/Constants';
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -42,6 +43,7 @@ class Pricing extends React.Component {
     },
     demoModalActive: false,
     userEmail: '',
+    loading: false
   }
 
   slider = React.createRef();
@@ -64,10 +66,21 @@ class Pricing extends React.Component {
   closeModal = async (e) => {
     e.preventDefault();
     this.setState({ demoModalActive: false });
-    if(this.state.userEmail )
-      await axios.post('/api/user', { "user": {"email": this.state.userEmail }})
   }
 
+  submitUser = async (e) => {
+    e.preventDefault();
+    const { userEmail } = this.state
+    const valid = EMAIL_REGEX.test(String(userEmail).toLocaleLowerCase())
+    if(valid) {
+      this.setState({loading: true})
+      await axios.post(`${BASE_AWS_URL}/api/user`, { "user": {"email": userEmail }})
+      this.setState({loading: false})
+      this.setState({ demoModalActive: false });
+    } else {
+      alert('invalid email')
+    }
+  }
 
   handlePricingSwitch = (e) => {
     this.setState({ priceChangerValue: e.target.checked ? '1' : '0' });
@@ -259,10 +272,14 @@ class Pricing extends React.Component {
                   placeholder="Your best email.."
                   formGroup="desktop"
                   onChange={e => this.setState({ userEmail: e.target.value })}
-                  labelHidden>
+                  labelHidden
+                  required
+                  >
                   <Button 
-                  onClick={this.closeModal}
-                  color="primary">Join Waitlist</Button>
+                    onClick={this.submitUser}
+                    loading={this.state.loading}
+                    color="primary">Join Waitlist
+                  </Button>
                 </Input>
                 <div className="center-content mt-24">
                   <a
@@ -273,7 +290,6 @@ class Pricing extends React.Component {
                   >No thanks!</a>
                 </div>
               </Modal>
-
             </div>
           </div>
         </div>
