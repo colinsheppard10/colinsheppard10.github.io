@@ -115,7 +115,7 @@ class Header extends React.Component {
                       this.state.isActive && 'is-active'
                     )}>
                   <div className="header-nav-inner">
-                    <ul className={
+                    {/* <ul className={
                       classNames(
                         'list-reset text-xxs',
                         navPosition && `header-nav-${navPosition}`
@@ -123,7 +123,7 @@ class Header extends React.Component {
                       <li>
                         <Link to="/secondary/" onClick={this.closeMenu}>Secondary page</Link>
                       </li>
-                    </ul>
+                    </ul> */}
                     {!hideSignin &&
                       <ul
                         className="list-reset header-nav-right"
