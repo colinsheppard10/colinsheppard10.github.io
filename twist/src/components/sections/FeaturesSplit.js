@@ -54,8 +54,8 @@ class FeaturesSplit extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Bold startup toolkit',
-      paragraph: 'Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.'
+      title: 'How It Works',
+      paragraph: `No more dependency on your phone, No more walking in the wrong direction. Strut with confidence. Here's how...`
     };
 
     return (
@@ -74,7 +74,7 @@ class FeaturesSplit extends React.Component {
                     Strap it on
                   </h3>
                   <p className="m-0">
-                    Eight vibrating motors are build into the belt. The belt hides discreetly under your shirt.
+                  Eight vibrating motors are built into the belt. The belt hides discreetly under your shirt.
                   </p>
                 </div>
                 <div className={
