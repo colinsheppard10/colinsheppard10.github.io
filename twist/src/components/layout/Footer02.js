@@ -46,7 +46,7 @@ class Footer extends React.Component {
               <div className="footer-blocks">
                 <div className="footer-block reveal-from-bottom" data-reveal-offset="0">
                   <Logo className="mb-16" />
-                  <div className="footer-copyright">&copy; 2020 Twist, all rights reserved</div>
+                  <div className="footer-copyright">&copy; 2022 Know Your Way, all rights reserved</div>
                 </div>
                 <div className="footer-block reveal-from-bottom" data-reveal-offset="0" data-reveal-delay="100">
                   <div className="footer-block-title">Company</div>

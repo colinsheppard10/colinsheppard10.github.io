@@ -48,7 +48,7 @@ class Footer extends React.Component {
             </div>
             <div className="footer-bottom space-between text-xxs invert-order-desktop">
               <FooterNav />
-              <div className="footer-copyright">&copy; 2020 Twist, all rights reserved</div>
+              <div className="footer-copyright">&copy; 2022 Know Your Way, all rights reserved</div>
             </div>
           </div>
         </div>
