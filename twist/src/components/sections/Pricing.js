@@ -200,10 +200,10 @@ class Pricing extends React.Component {
                         What's included
                       </div>
                       <ul className="pricing-item-features-list list-reset text-xs mb-32">
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
                       </ul>
                     </div>
                   </div>
@@ -234,12 +234,12 @@ class Pricing extends React.Component {
                         What's included
                       </div>
                       <ul className="pricing-item-features-list list-reset text-xs mb-32">
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
-                        <li className="is-checked">Excepteur sint occaecat velit</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">La meilleure chose sur terre</li>
                       </ul>
                     </div>
                   </div>

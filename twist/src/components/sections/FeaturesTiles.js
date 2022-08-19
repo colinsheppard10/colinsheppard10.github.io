@@ -79,7 +79,7 @@ class FeaturesTiles extends React.Component {
                       Confidence
                     </h4>
                     <p className="m-0 text-sm reveal-from-right" data-reveal-container=".tiles-item" data-reveal-delay="200">
-                    You think Don Draper asks for directions? “Umm excuse me do you know where…” NO!! He’s not a little bitch, he knows where he’s going.
+                    You think Don Draper asks for directions? “Umm excuse me do you know where…” NO!! He knows where he’s going.
                     </p>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ class FeaturesTiles extends React.Component {
                       Conicidence
                     </h4>
                     <p className="m-0 text-sm reveal-from-right" data-reveal-container=".tiles-item" data-reveal-delay="400">
-                      There is going to be a cute girl, and she is going to ask you for directions. Carpe this fucking diem!
+                      There is going to be a cute guy or girl, and they are going to ask you for directions. Carpe diem!
                     </p>
                   </div>
                 </div>
