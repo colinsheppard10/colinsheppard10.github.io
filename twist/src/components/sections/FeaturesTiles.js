@@ -79,7 +79,7 @@ class FeaturesTiles extends React.Component {
                       Confidence
                     </h4>
                     <p className="m-0 text-sm reveal-from-right" data-reveal-container=".tiles-item" data-reveal-delay="200">
-                    You think Don Draper asks for directions? “Umm excuse me do you know where…” NO!! He knows where he’s going.
+                    Train your brain while you're running to the grocery store. Build your navigation muscles. Then cast the belt aside and strut with confidence!
                     </p>
                   </div>
                 </div>
@@ -120,10 +120,10 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8 reveal-from-right" data-reveal-container=".tiles-item" data-reveal-delay="300">
-                      Conicidence
+                      Coincidence
                     </h4>
                     <p className="m-0 text-sm reveal-from-right" data-reveal-container=".tiles-item" data-reveal-delay="400">
-                      There is going to be a cute guy or girl, and they are going to ask you for directions. Carpe diem!
+                      When you know your way around town, you just tend to find more spontaneous fun things to do!
                     </p>
                   </div>
                 </div>

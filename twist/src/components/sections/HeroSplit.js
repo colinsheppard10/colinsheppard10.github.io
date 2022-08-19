@@ -68,7 +68,7 @@ class HeroSplit extends React.Component {
                     Know Your Way
                   </h1>
                   <p className="mt-0 mb-24 reveal-from-left" data-reveal-delay="200">
-                    Our training belt helps you build a sense of direction. Know which way is North, know your city, know your way.
+                  Our training belt helps you subconsciously build a sense of direction. Know which way is North, know your city, know your way.
                   </p>
                   <div className="reveal-from-left" data-reveal-delay="400">
                     <Link to={'pricing'} spy={true} smooth={true} duration={700}>
@@ -81,7 +81,7 @@ class HeroSplit extends React.Component {
                 <div className="hero-figure is-3d split-item-image illustration-element-01 reveal-scale-up">
                   <Image
                     src={require('./../../assets/images/hero-image.svg')}
-                    alt="Hero"
+                    alt="Hero"y
                     width={520}
                     height={380} />
                 </div>

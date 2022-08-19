@@ -74,7 +74,7 @@ class FeaturesSplit extends React.Component {
                     Strap it on
                   </h3>
                   <p className="m-0">
-                  Eight vibrating motors are built into the belt. The belt hides discreetly under your shirt.
+                  Eight vibrating motors are built into the belt forming a circle around your waist. The belt hides discreetly under your shirt.
                   </p>
                 </div>
                 <div className={
@@ -96,7 +96,7 @@ class FeaturesSplit extends React.Component {
                     Train your brain
                   </h3>
                   <p className="m-0">
-                    As you walk around your city, the Compass Belt will vibrate in the direction of north. The same way a compass always points north.
+                    As you walk around your city the belt will vibrate in the direction of north, the same way a compass always points north.
                   </p>
                 </div>
                 <div className={
@@ -118,7 +118,7 @@ class FeaturesSplit extends React.Component {
                     Know your way
                   </h3>
                   <p className="m-0">
-                  The belt speaks directly to your subconsious brain. You will build up a map of your city in your mind without even realizing.
+                  With a constant little reminder "this way is north", you will: Become less dependant on your phone, start working your navigation muscles, and start trusting your own sense of direction.
                   </p>
                 </div>
                 <div className={

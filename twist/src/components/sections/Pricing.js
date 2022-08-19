@@ -200,10 +200,12 @@ class Pricing extends React.Component {
                         What's included
                       </div>
                       <ul className="pricing-item-features-list list-reset text-xs mb-32">
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
+                        <li className="is-checked">The original Belt in black</li>
+                        <li className="is-checked">20000mAh battery</li>
+                        <li className="is-checked">106W USB C charger</li>
+                        <li className="is-checked">12000RPM Vibrating motor</li>
+
+                        {/* <li className="is-checked">La meilleure chose sur terre</li> */}
                       </ul>
                     </div>
                   </div>
@@ -234,12 +236,10 @@ class Pricing extends React.Component {
                         What's included
                       </div>
                       <ul className="pricing-item-features-list list-reset text-xs mb-32">
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
-                        <li className="is-checked">La meilleure chose sur terre</li>
+                      <li className="is-checked">The original Belt in custom colors</li>
+                        <li className="is-checked">30000mAh battery</li>
+                        <li className="is-checked">106W USB C charger</li>
+                        <li className="is-checked">16000RPM Vibrating motor</li>
                       </ul>
                     </div>
                   </div>
@@ -263,7 +263,7 @@ class Pricing extends React.Component {
                     height={56} />
                   <h3 className="mt-0 mb-12">Join our waitlist</h3>
                   <p className="text-sm">
-                    We are currently sold out. You may join our waitlist to receive a notification as soon as belts become available.
+                  We are currently in the prototyping phase. You may join our waitlist to receive a notification as soon as belts become available.
                   </p>
                 </div>
                 <Input

@@ -165,7 +165,7 @@ class Secondary extends React.Component {
                   height={56} />
                 <h3 className="mt-0 mb-12">Join our waitlist</h3>
                 <p className="text-sm">
-                We are currently sold out. You may join our waitlist to receive a notification as soon as belts become available.
+                We are currently in the prototyping phase. You may join our waitlist to receive a notification as soon as belts become available.
                 </p>
               </div>
               <Input
