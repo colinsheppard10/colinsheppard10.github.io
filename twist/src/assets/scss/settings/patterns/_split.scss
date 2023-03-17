@@ -1,7 +1,0 @@
-// Split (core/patterns/_split.scss)
-$split-item--padding-v__mobile: 		2px;		// split item, top and bottom padding (mobile)
-$split-item--padding-v__desktop: 		2px;		// split item, top and bottom padding (desktop)
-$split-item-content--padding-h: 		2px;		// padding distanciating content from the middle of container (desktop)
-$split-item-image--padding-h: 			2px;		// padding distanciating image from the middle of container (desktop)
-$split-item--inner-padding-h: 			$split-item-content--padding-h + $split-item-image--padding-h; // horizontal padding sum, i.e. padding between content and image (desktop)
-$split-item--inner-padding-v_mobile:	2px;		// vertical padding, i.e. padding between content and image (mobile)
