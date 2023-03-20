@@ -5,7 +5,7 @@ import {
 } from '@mediapipe/drawing_utils';
 import { Pose, POSE_CONNECTIONS, Results } from '@mediapipe/pose';
 import countExercise from '../Excercise/exerciseCounter';
-import { upper } from '../Excercise/exercise';
+import { Exercise, upper } from '../Excercise/exercise';
 import ProgressBar from "@ramonak/react-progress-bar";
 
 const BodyContainer = () => {
@@ -14,23 +14,26 @@ const BodyContainer = () => {
   const inputVideoRef = useRef<HTMLVideoElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
-
-  const currentExercise = upper[2]
-
-  const [exerciseProgress, setExerciseProgress] = useState(() => {
-    console.log('in here')
-    return {
-      direction: 0,
-      count: 0,
-      repCompletionPercent: 0
-    }
+  const [exerciseProgress, setExerciseProgress] = useState({
+    direction: 0,
+    count: 0,
+    set: 0,
+    exerciseSelectionIndex: -1,
+    activeExercise: -1
+  } as {
+    direction: number;
+    count: number;
+    set: number;
+    exerciseSelectionIndex: number,
+    activeExercise: number;
   })
+  const activeExerciseRef = useRef(-1);
+  activeExerciseRef.current = exerciseProgress.activeExercise
+  const [repCompletionPercent, setRepCompletionPercent] = useState(0);
+  const [exerciseSelection, setExerciseSelection] = useState([] as any)
 
   useEffect(() => {
-    if (!inputVideoReady) {
-      return;
-    }
-    if (inputVideoRef.current && canvasRef.current) {
+    if (inputVideoReady && inputVideoRef.current && canvasRef.current) {
       contextRef.current = canvasRef.current.getContext('2d');
       const constraints = {
         video: { width: { min: 1280 }, height: { min: 720 } },
@@ -96,33 +99,97 @@ const BodyContainer = () => {
         { color: '#FF0000', lineWidth: 2 });
       contextRef.current.restore();
       let { poseLandmarks } = results
-      if (poseLandmarks) {
-        let {direction, count} = exerciseProgress
-        // let { direction: d, count: c, repCompletionPercent: p } = countExercise(poseLandmarks, currentExercise, direction, count)
-        // console.log(`after d:${d} c:${c} p:${p}`)
-        setExerciseProgress(countExercise(poseLandmarks, currentExercise, direction, count))
+      if (poseLandmarks && activeExerciseRef.current >= 0) {
+        setRepCompletionPercent(countExercise(poseLandmarks, upper[activeExerciseRef.current]));
       }
     }
   };
 
-  let {repCompletionPercent, count} =  exerciseProgress
+  useEffect(() => {
+    let { direction, count, set, exerciseSelectionIndex, activeExercise } = exerciseProgress
+    if (repCompletionPercent == 100) {
+      if (direction == 0) {
+        count++;
+        direction = 1
+      }
+    } else if (repCompletionPercent == 0) {
+      if (direction == 1) {
+        direction = 0
+      }
+    }
+
+    let exercise = upper[activeExercise]
+    if (exercise) {
+      if (count >= exercise.reps && direction == 0) {
+        if (exerciseSelectionIndex < exerciseSelection.length - 1)
+          exerciseSelectionIndex++;
+        else {
+          set++;
+          exerciseSelectionIndex = 0;
+        }
+        count = 0;
+      }
+
+      activeExercise = exerciseSelection[exerciseSelectionIndex].index;
+      setExerciseProgress({ direction, count, set, exerciseSelectionIndex, activeExercise })
+    }
+
+  }, [repCompletionPercent])
+
+  let { set, count, exerciseSelectionIndex } = exerciseProgress
   return (
     <div>
       <div>
-        {upper.map((exercise) => {
+        {upper.map((exercise, index) => {
           return <div
-            onClick={()=>{}}
+            key={index}
+            onClick={() => {
+              let workoutKey = Math.random();
+              setExerciseSelection((prevExerciseSelection: any[]) => {
+                return [...prevExerciseSelection, { workoutKey, index }];
+              })
+            }}
           >{exercise.name}</div>
         })}
       </div>
       <div>
-      {count}
+        {exerciseSelection.map((exercise: any, index: number) => {
+          let { workoutKey, index: workoutIndex, } = exercise
+          let isActiveExercise = index == exerciseSelectionIndex
+          return <div
+            key={index}
+            onClick={() => {
+              setExerciseSelection((prevExercise: any[]) => {
+                let newExercise = prevExercise.filter((ex) => ex.workoutKey !== workoutKey)
+                return newExercise
+              })
+            }}
+          >
+            {`${index} - ${upper[workoutIndex as number].name} ${isActiveExercise ? '<=' : ''}`}
+          </div>
+        })}
       </div>
       <div>
-      <ProgressBar 
-        transitionDuration={'.5s'}
-        completed={repCompletionPercent} 
-      />;
+        {`set:${set} count:${count}`}
+      </div>
+      <div
+        onClick={() => {
+          if (exerciseSelection.length)
+            setExerciseProgress({
+              direction: 0,
+              count: 0,
+              set: 0,
+              exerciseSelectionIndex: 0,
+              activeExercise: exerciseSelection[0].index
+            })
+        }}
+      >start
+      </div>
+      <div>
+        <ProgressBar
+          transitionDuration={'.5s'}
+          completed={repCompletionPercent}
+        />
       </div>
       <video
         autoPlay
