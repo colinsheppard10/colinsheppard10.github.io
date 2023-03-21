@@ -12,7 +12,7 @@ const CountDislay = ({ repCompletionPercent, exerciseName, set, count, resetWork
     />
     <InfoContainer>{`S:${set}`}</InfoContainer>
     <InfoContainer>{`R:${count}`}</InfoContainer>
-    <InfoContainer>{exerciseName}</InfoContainer>
+    <NameContainer>{exerciseName}</NameContainer>
   </CountContainer>
 }
 
@@ -31,6 +31,14 @@ const InfoContainer = styled.div`
   display: flex;
   justify-content: center;
   font-size: 23vh;
+  font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+`;
+
+const NameContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 16vh;
   font-weight: bold;
   font-family: 'Dosis', sans-serif;
 `;

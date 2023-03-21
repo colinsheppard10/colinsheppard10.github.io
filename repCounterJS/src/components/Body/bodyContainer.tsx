@@ -157,7 +157,9 @@ const BodyContainer = () => {
         <>
           <WorkoutSelection>
             <WorkoutItem>
-              WORKOUT OPTIONS:
+              <Title>
+                WORKOUT OPTIONS:
+              </Title>
               {upper.map((exercise, index) => {
                 return <div
                   key={index}
@@ -171,7 +173,9 @@ const BodyContainer = () => {
               })}
             </WorkoutItem>
             <WorkoutItem>
-              CURRENT SELECTION:
+              <Title>
+                CURRENT SELECTION:
+              </Title>
               {exerciseSelection.map((exercise: any, index: number) => {
                 let { workoutKey, index: workoutIndex, } = exercise
                 return <div
@@ -246,6 +250,10 @@ export default BodyContainer;
 
 const MainContainer = styled.div`
   text-transform: uppercase;
+`;
+
+const Title = styled.div`
+  border-bottom: 1rem solid;
 `;
 
 const WorkoutSelection = styled.div`
