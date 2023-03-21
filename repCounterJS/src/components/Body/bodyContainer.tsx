@@ -7,6 +7,8 @@ import { Pose, POSE_CONNECTIONS, Results } from '@mediapipe/pose';
 import countExercise from '../Excercise/exerciseCounter';
 import { Exercise, upper } from '../Excercise/exercise';
 import ProgressBar from "@ramonak/react-progress-bar";
+import CountDislay from '../countDisplay';
+import styled from 'styled-components';
 
 const BodyContainer = () => {
   const [inputVideoReady, setInputVideoReady] = useState(false);
@@ -27,8 +29,17 @@ const BodyContainer = () => {
     exerciseSelectionIndex: number,
     activeExercise: number;
   })
-  const activeExerciseRef = useRef(-1);
-  activeExerciseRef.current = exerciseProgress.activeExercise
+  const activeExerciseRef = useRef({
+    activeExercise: -1,
+    count: -1,
+    set: -1
+  });
+  activeExerciseRef.current = {
+    activeExercise: exerciseProgress.activeExercise,
+    count: 1,
+    set: 1
+  }
+
   const [repCompletionPercent, setRepCompletionPercent] = useState(0);
   const [exerciseSelection, setExerciseSelection] = useState([] as any)
 
@@ -97,30 +108,31 @@ const BodyContainer = () => {
         { color: '#00FF00', lineWidth: 4 });
       drawLandmarks(contextRef.current, results.poseLandmarks,
         { color: '#FF0000', lineWidth: 2 });
+
       contextRef.current.restore();
       let { poseLandmarks } = results
-      if (poseLandmarks && activeExerciseRef.current >= 0) {
-        setRepCompletionPercent(countExercise(poseLandmarks, upper[activeExerciseRef.current]));
+      if (poseLandmarks && activeExerciseRef.current?.activeExercise >= 0) {
+        setRepCompletionPercent(countExercise(poseLandmarks, upper[activeExerciseRef.current.activeExercise]));
       }
     }
   };
 
   useEffect(() => {
     let { direction, count, set, exerciseSelectionIndex, activeExercise } = exerciseProgress
-    if (repCompletionPercent == 100) {
-      if (direction == 0) {
+    if (repCompletionPercent === 100) {
+      if (direction === 0) {
         count++;
         direction = 1
       }
-    } else if (repCompletionPercent == 0) {
-      if (direction == 1) {
+    } else if (repCompletionPercent === 0) {
+      if (direction === 1) {
         direction = 0
       }
     }
 
     let exercise = upper[activeExercise]
     if (exercise) {
-      if (count >= exercise.reps && direction == 0) {
+      if (count >= exercise.reps && direction === 0) {
         if (exerciseSelectionIndex < exerciseSelection.length - 1)
           exerciseSelectionIndex++;
         else {
@@ -136,76 +148,113 @@ const BodyContainer = () => {
 
   }, [repCompletionPercent])
 
-  let { set, count, exerciseSelectionIndex } = exerciseProgress
+
+  let { set, count, exerciseSelectionIndex, activeExercise } = exerciseProgress
+  let workoutStarted = activeExercise > -1;
   return (
-    <div>
-      <div>
-        {upper.map((exercise, index) => {
-          return <div
-            key={index}
-            onClick={() => {
-              let workoutKey = Math.random();
-              setExerciseSelection((prevExerciseSelection: any[]) => {
-                return [...prevExerciseSelection, { workoutKey, index }];
-              })
-            }}
-          >{exercise.name}</div>
-        })}
-      </div>
-      <div>
-        {exerciseSelection.map((exercise: any, index: number) => {
-          let { workoutKey, index: workoutIndex, } = exercise
-          let isActiveExercise = index == exerciseSelectionIndex
-          return <div
-            key={index}
-            onClick={() => {
-              setExerciseSelection((prevExercise: any[]) => {
-                let newExercise = prevExercise.filter((ex) => ex.workoutKey !== workoutKey)
-                return newExercise
-              })
-            }}
-          >
-            {`${index} - ${upper[workoutIndex as number].name} ${isActiveExercise ? '<=' : ''}`}
+    <MainContainer>
+      {!workoutStarted ?
+        <>
+          <WorkoutSelection>
+            <WorkoutItem>
+              WORKOUT OPTIONS:
+              {upper.map((exercise, index) => {
+                return <div
+                  key={index}
+                  onClick={() => {
+                    let workoutKey = Math.random();
+                    setExerciseSelection((prevExerciseSelection: any[]) => {
+                      return [...prevExerciseSelection, { workoutKey, index }];
+                    })
+                  }}
+                >{exercise.name}</div>
+              })}
+            </WorkoutItem>
+            <WorkoutItem>
+              CURRENT SELECTION:
+              {exerciseSelection.map((exercise: any, index: number) => {
+                let { workoutKey, index: workoutIndex, } = exercise
+                return <div
+                  key={index}
+                  onClick={() => {
+                    setExerciseSelection((prevExercise: any[]) => {
+                      let newExercise = prevExercise.filter((ex) => ex.workoutKey !== workoutKey)
+                      return newExercise
+                    })
+                  }}
+                >
+                  {`${index} - ${upper[workoutIndex as number].name}`}
+                </div>
+              })}
+            </WorkoutItem>
+          </WorkoutSelection>
+          <WorkoutSelection>
+            <WorkoutItem
+              onClick={() => {
+                if (exerciseSelection.length)
+                  setExerciseProgress({
+                    direction: 0,
+                    count: 0,
+                    set: 0,
+                    exerciseSelectionIndex: 0,
+                    activeExercise: exerciseSelection[0].index
+                  })
+              }}
+            >start
+            </WorkoutItem>
+          </WorkoutSelection>
+          <div>
           </div>
-        })}
-      </div>
-      <div>
-        {`set:${set} count:${count}`}
-      </div>
-      <div
-        onClick={() => {
-          if (exerciseSelection.length)
+        </>
+
+        : <CountDislay
+          repCompletionPercent={repCompletionPercent}
+          exerciseName={upper[activeExercise].name}
+          set={set}
+          count={count}
+          resetWorkout={() => {
             setExerciseProgress({
               direction: 0,
               count: 0,
               set: 0,
-              exerciseSelectionIndex: 0,
-              activeExercise: exerciseSelection[0].index
+              exerciseSelectionIndex: -1,
+              activeExercise: -1
             })
-        }}
-      >start
-      </div>
+          }}
+        />}
+
       <div>
-        <ProgressBar
-          transitionDuration={'.5s'}
-          completed={repCompletionPercent}
+        <video
+          autoPlay
+          height={0}
+          width={0}
+          ref={(el) => {
+            inputVideoRef.current = el;
+            setInputVideoReady(!!el);
+          }}
         />
+        <canvas ref={canvasRef} width={window.screen.availWidth * (3 / 4)} height={window.screen.availHeight * (3 / 4)} />
+        {!loaded && (
+          <div className="message">Loading</div>
+        )}
       </div>
-      <video
-        autoPlay
-        height={0}
-        width={0}
-        ref={(el) => {
-          inputVideoRef.current = el;
-          setInputVideoReady(!!el);
-        }}
-      />
-      <canvas ref={canvasRef} width={window.screen.availWidth - 10} height={window.screen.availHeight - 100} />
-      {!loaded && (
-        <div className="message">Loading</div>
-      )}
-    </div>
+    </MainContainer>
   );
 };
 
 export default BodyContainer;
+
+const MainContainer = styled.div`
+  text-transform: uppercase;
+`;
+
+const WorkoutSelection = styled.div`
+  font-size: 5vh;
+  display: flex;
+`;
+
+const WorkoutItem = styled.div`
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  flex-grow: 1;
+`;
